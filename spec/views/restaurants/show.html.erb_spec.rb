@@ -3,19 +3,22 @@ require 'spec_helper'
 describe "restaurants/show.html.erb" do
   before(:each) do
     @restaurant = assign(:restaurant, stub_model(Restaurant,
-      :name => "Name",
-      :website => "Website",
-      :info => "MyText"
+      :name => "Tony's",
+      :website => "http://www.ristorantetony.fi",
+      :info => "Excellent Italian bistro!"
     ))
   end
 
-  it "renders attributes in <p>" do
+  it "displays restaurant's attributes" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Name/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Website/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/MyText/)
+    rendered.should have_content(@restaurant.name)
+    rendered.should have_content(@restaurant.website)
+    rendered.should have_content(@restaurant.info)    
   end
+  
+  it "has a map div" do 
+    render
+    rendered.should have_selector('#map_canvas')
+  end
+  
 end

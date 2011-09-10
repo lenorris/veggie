@@ -34,5 +34,6 @@ group :test, :development do
   gem 'turn', :require => false
   gem 'rspec-rails', "~> 2.6"
   gem 'factory_girl_rails'
+  gem 'capybara'
 
 end
