@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
+gem 'haml-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -17,6 +18,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'therubyracer'
 
 # Use unicorn as the web server
 # gem 'unicorn'
