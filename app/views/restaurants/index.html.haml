@@ -1,22 +1,94 @@
-%h1 Listing restaurants
+#toolbar
+  =image_tag("logo.png", :alt => 'Veggie - parhaat kasvisruokapaikat!') 
+  %a.navi.button{:href => "#"} Ravintolat &rsaquo;
+  %form
+    %input{:type => "text", :value => "Hae Veggiestä"}
+  %hr
+  %select
+    %option Veggie Helsinki
+    %option Veggie Tampere
+    %option Veggie Turku             
+  %hr
+  %p
+    Eik&ouml; ravintolaasi viel&auml; l&ouml;ydy Veggiest&auml;?
+  %a.button{:href => "#"} Lis&auml;&auml; ravintola 
+    
+#top
+  %h1 Ravintolat
+  %a.button{:href => "#"}Lis&auml;&auml; ravintolasi Veggieen &raquo;
 
-%table
-  %tr
-    %th Name
-    %th Website
-    %th Info
-    %th
-    %th
-    %th 
-  - @restaurants.each do |restaurant| 
+#shortcuts
+  %h6 Voit selata ravintoloita:
+  %p
+    %a{:href => "#"} Kartan avulla
+    &bull;
+    %a{:href => "#"} Tagien avulla
+    &bull;
+    %a{:href => "#"} Arvostuksen tai ajankohtaisuuden mukaan
+    &bull;        
+    %a{:href => "#"} Aakkosellisen hakemiston avulla
+  
+#map
+  =image_tag("map.png", :alt => "") 
+
+#tag-cloud
+  %h2 Tagit:
+  %ul
+    %li
+      %a{:href => "#"}lorem ipsum
+      (30)
+    %li  
+      %a{:href => "#"}dolor
+      (30)
+    %li  
+      %a{:href => "#"}sit amen
+      (30)
+    %li  
+      %a{:href => "#"}consectetur
+      (30)                  
+    %li  
+      %a{:href => "#"}elit
+      (30)                  
+
+  %p.showall
+    Ja 51 lis&auml;&auml;. 
+    %a{:href => "#"}N&auml;yt&auml; kaikki &raquo;
+
+
+    %div
+      .five-restaurant-list
+        %h2 Viimeksi lis&auml;tyt:
+        %ul
+          %li
+            %a{:href => "#" }Ravintolan nimi lorem ipsum
+            %p.stars 4.8
+            %p.hearts 21
+          %li
+            %a{:href => "#" }Ravintolan nimi lorem ipsum 
+            %p.stars 4.8
+            %p.hearts 21
+
+
+%div
+  %h1 Listing restaurants
+
+  %table
     %tr
-      %td= restaurant.name 
-      %td= restaurant.website
-      %td= restaurant.info 
-      %td= link_to 'Show', restaurant
-      %td= link_to 'Edit', edit_restaurant_path(restaurant)
-      %td= link_to 'Destroy', restaurant, confirm: 'Are you sure?', method: :delete   
+      %th Name
+      %th Website
+      %th Info
+      %th
+      %th
+      %th 
+    - @restaurants.each do |restaurant| 
+      %tr
+        %td= restaurant.name 
+        %td= restaurant.website
+        %td= restaurant.info 
+        %td= link_to 'Show', restaurant
+        %td= link_to 'Edit', edit_restaurant_path(restaurant)
+        %td= link_to 'Destroy', restaurant, confirm: 'Are you sure?', method: :delete   
 
-%br
+  %br
 
-= link_to 'New Restaurant', new_restaurant_path
+  = link_to 'New Restaurant', new_restaurant_path
