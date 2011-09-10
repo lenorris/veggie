@@ -24,7 +24,7 @@ describe RestaurantsController do
   # Restaurant. As you add validations to Restaurant, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:name => "Tony's deli", :info => "Excellent italian"}
   end
 
   describe "GET index" do
