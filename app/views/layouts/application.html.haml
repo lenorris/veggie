@@ -1,0 +1,27 @@
+!!! 5
+%html
+  %head
+  %title Veggie
+  = stylesheet_link_tag    "application" 
+  = javascript_include_tag "application" 
+  = yield :script
+  = csrf_meta_tags
+
+%body
+
+  #header
+    %p.breadcrumb 
+      Olet t&auml;&auml;ll&auml;: 
+      %a{:href => "#"} Veggie Helsinki &gt; 
+      %a{:href => "#"} Ravintolat
+    %ul#profile.rounded
+      %li 
+        Moi 
+        %a{:href => "#"} Hanna!
+      %li 
+        %a#settings{:href => "#"} Settings
+      %li
+        %a#logout{:href => "#"} Logout
+    %hr
+    
+  .content#content= yield
