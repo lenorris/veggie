@@ -29,7 +29,7 @@ describe RestaurantsController do
 
   describe "GET index" do
     it "assigns all restaurants as @restaurants" do
-      restaurant = Restaurant.create! valid_attributes
+      restaurant = FactoryGirl.create(:restaurant)
       get :index
       assigns(:restaurants).should eq([restaurant])
     end
@@ -37,7 +37,7 @@ describe RestaurantsController do
 
   describe "GET show" do
     it "assigns the requested restaurant as @restaurant" do
-      restaurant = Restaurant.create! valid_attributes
+      restaurant = FactoryGirl.create(:restaurant)
       get :show, :id => restaurant.id.to_s
       assigns(:restaurant).should eq(restaurant)
     end
@@ -52,7 +52,7 @@ describe RestaurantsController do
 
   describe "GET edit" do
     it "assigns the requested restaurant as @restaurant" do
-      restaurant = Restaurant.create! valid_attributes
+      restaurant = FactoryGirl.create(:restaurant)
       get :edit, :id => restaurant.id.to_s
       assigns(:restaurant).should eq(restaurant)
     end

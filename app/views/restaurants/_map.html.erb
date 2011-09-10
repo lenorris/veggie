@@ -1,0 +1,31 @@
+<div id="map_canvas"></div>
+<% content_for :script do %>
+  <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?sensor=true" %>
+  <script type="text/javascript">
+    var initialize = function() {
+      
+      /* Variable and function declaration */
+      var latlng = new google.maps.LatLng(<%= lat %>, <%= lng %>);
+      var myOptions = {
+        zoom: 14,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var addMarker = function(latlng, title) {
+        var marker = new google.maps.Marker({
+        position: latlng, 
+        map: map, 
+        title: title
+        });
+      };
+      
+      /* Main part of the function */
+      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+      addMarker(latlng, "<%= restaurant.name %>" )
+    };
+    
+    $(document).ready(function() {
+      initialize();
+    });
+  </script>
+<% end %>
