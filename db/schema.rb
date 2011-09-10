@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20110910084602) do
 
   add_index "branches", ["restaurant_id"], :name => "index_branches_on_restaurant_id"
 
-
   create_table "restaurants", :force => true do |t|
     t.string   "name"
     t.string   "website"
