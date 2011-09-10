@@ -4,6 +4,7 @@
   %title Veggie
   = stylesheet_link_tag    "application" 
   = javascript_include_tag "application" 
+  = yield :script
   = csrf_meta_tags
 
 %body
@@ -22,7 +23,5 @@
       %li
         %a#logout{:href => "#"} Logout
     %hr
-
+    
   .content#content= yield
-
-  #content
