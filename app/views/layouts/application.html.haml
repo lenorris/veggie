@@ -11,17 +11,17 @@
 
   #header
     %p.breadcrumb 
-      Olet t&auml;&auml;ll&auml;: 
+      =t :your_are_here
       %a{:href => "#"} Veggie Helsinki &gt; 
       %a{:href => "#"} Ravintolat
     %ul#profile.rounded
       %li 
-        Moi 
+        =t :hello 
         %a{:href => "#"} Hanna!
       %li 
-        %a#settings{:href => "#"} Settings
+        %a#settings{:href => "#"}=t :settings
       %li
-        %a#logout{:href => "#"} Logout
+        %a#logout{:href => "#"}=t :logout
     %hr
     
   .content#content= yield

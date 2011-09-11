@@ -1,0 +1,21 @@
+
+fi:
+  # Application
+  slogan: "Veggie - parhaat kasvisruokapaikat!"
+  your_are_here: "Olet täällä:"
+  hello: "Moi"
+  settings: "Settings"
+  logout: "Logout"
+  
+  # Restaurant
+  restaurants_button: "Ravintolat ›"
+  search_from_veggie: "Hae Veggiestä"
+  cant_find_from_veggie: "Eikö ravintolaasi vielä löydy Veggiestä?"
+  add_restaurant: "Lisää ravintola"
+  add_your_restaurant: "Lisää ravintolasi Veggieen ›"
+  browse_the_restaurants_by: "Voit selata ravintoloita:"
+  by_map: "Kartan avulla"
+  by_tags: "Tagien avulla"
+  by_reviews: "Arvostuksen tai ajankohtaisuuden mukaan"
+  by_alphabetical_list: "Aakkosellisen hakemiston avulla"
+  last_added: "Viimeksi lisätyt:"

@@ -1,8 +1,8 @@
 #toolbar
-  =image_tag("logo.png", :alt => 'Veggie - parhaat kasvisruokapaikat!') 
-  %a.navi.button{:href => "#"} Ravintolat &rsaquo;
+  =image_tag("logo.png", :alt => t(:slogan)) 
+  %a.navi.button{:href => "#"}= t(:restaurants_button)
   %form
-    %input{:type => "text", :value => "Hae Veggiestä"}
+    %input{:type => "text", :value => t(:search_from_veggie) }
   %hr
   %select
     %option Veggie Helsinki
@@ -10,23 +10,24 @@
     %option Veggie Turku             
   %hr
   %p
-    Eik&ouml; ravintolaasi viel&auml; l&ouml;ydy Veggiest&auml;?
-  %a.button{:href => "#"} Lis&auml;&auml; ravintola 
-    
+    =t :cant_find_from_veggie
+  
+  %a.button{:href => new_restaurant_path}=t :add_restaurant
+  
 #top
   %h1 Ravintolat
-  %a.button{:href => "#"}Lis&auml;&auml; ravintolasi Veggieen &raquo;
+  %a.button{:href => "#"}=t :add_your_restaurant
 
 #shortcuts
-  %h6 Voit selata ravintoloita:
+  %h6=t :browse_the_restaurants_by
   %p
-    %a{:href => "#"} Kartan avulla
+    %a{:href => "#"}=t :by_map
     &bull;
-    %a{:href => "#"} Tagien avulla
+    %a{:href => "#"}=t :by_tags
     &bull;
-    %a{:href => "#"} Arvostuksen tai ajankohtaisuuden mukaan
+    %a{:href => "#"}=t :by_reviews
     &bull;        
-    %a{:href => "#"} Aakkosellisen hakemiston avulla
+    %a{:href => "#"}=t :by_alphabetical_list
   
 #map
   - unless @restaurants.empty? 
@@ -59,7 +60,7 @@
 
     %div
       .five-restaurant-list
-        %h2 Viimeksi lis&auml;tyt:
+        %h2=t :last_added
         %ul
           %li
             %a{:href => "#" }Ravintolan nimi lorem ipsum
@@ -94,3 +95,5 @@
   %br
 
   = link_to 'New Restaurant', new_restaurant_path
+  = t :hello
+  Ravintolat &rsaquo;
