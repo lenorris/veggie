@@ -20,11 +20,15 @@ end
 gem 'jquery-rails'
 gem 'therubyracer'
 
+# Heroku for deployment
+
+gem 'heroku'
+group :production do
+  gem 'pg' # Heroku requires this
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
