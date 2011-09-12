@@ -16,12 +16,17 @@
       %a{:href => "#"} Ravintolat
     %ul#profile.rounded
       %li 
-        =t :hello 
-        %a{:href => "#"} Hanna!
+        - if current_user
+          =t :hello 
+          %a{:href => "#"}= current_user.email
       %li 
         %a#settings{:href => "#"}=t :settings
       %li
-        %a#logout{:href => "#"}=t :logout
+        - if current_user
+          %a#logout{:href => logout_url }=t :logout
+        - else
+          %a#login{:href => login_url }=t :login
+
     %hr
     
   .content#content= yield
