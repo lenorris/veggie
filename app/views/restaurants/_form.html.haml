@@ -22,5 +22,28 @@
     = f.label :info 
     %br 
     = f.text_area :info
+
+  = f.fields_for :branches do |branch_form|
+    .field
+      =branch_form.label :street_address
+      %br
+      =branch_form.text_area :street_address
+    .field
+      =branch_form.label :city
+      %br
+      =branch_form.text_area :city
+    .field  
+      =branch_form.label :phone
+      %br
+      =branch_form.text_area :phone
+    .field  
+      =branch_form.label :business_hours
+      %br
+      =branch_form.text_area :business_hours
+    .field  
+      =branch_form.label :email
+      %br
+      =branch_form.text_area :email
+    
   .actions
     = f.submit

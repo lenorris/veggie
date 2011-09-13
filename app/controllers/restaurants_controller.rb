@@ -25,6 +25,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/new.json
   def new
     @restaurant = Restaurant.new
+    @restaurant.branches.build
 
     respond_to do |format|
       format.html # new.html.erb

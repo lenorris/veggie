@@ -24,7 +24,11 @@ describe RestaurantsController do
   # Restaurant. As you add validations to Restaurant, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {:name => "Tony's deli", :info => "Excellent italian"}
+    {:name => "Tony's deli", :info => "Excellent italian",
+      :branches_attributes => { 
+        '0' => {:street_address => 'Annankatu 15', :city => 'Helsinki'}
+      }
+    }
   end
 
   describe "GET index" do
@@ -44,10 +48,20 @@ describe RestaurantsController do
   end
 
   describe "GET new" do
-    it "assigns a new restaurant as @restaurant" do
+    before(:each) do
       get :new
-      assigns(:restaurant).should be_a_new(Restaurant)
+      @new_restaurant = assigns(:restaurant)
     end
+    
+    it "assigns a new restaurant as @restaurant" do
+      @new_restaurant.should be_a_new(Restaurant)
+    end
+    
+    it "builds a branch as @restaurant.branches.first" do
+      @new_restaurant.branches.size.should == 1
+      @new_restaurant.branches.first.should be_a_new(Branch)
+    end
+    
   end
 
   describe "GET edit" do
@@ -60,10 +74,12 @@ describe RestaurantsController do
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Restaurant" do
-        expect {
+      it "creates a new Restaurant and Branch" do
+          old_restaurant_count = Restaurant.count
+          old_branch_count = Branch.count
           post :create, :restaurant => valid_attributes
-        }.to change(Restaurant, :count).by(1)
+          Restaurant.count.should == old_restaurant_count +1
+          Branch.count.should == old_branch_count +1
       end
 
       it "assigns a newly created restaurant as @restaurant" do
@@ -84,6 +100,14 @@ describe RestaurantsController do
         Restaurant.any_instance.stub(:save).and_return(false)
         post :create, :restaurant => {}
         assigns(:restaurant).should be_a_new(Restaurant)
+      end
+      
+      it "also re-renders new template if branch is invalid" do
+        Branch.any_instance.stub(:save).and_return(false)
+        post :create, :restaurant => valid_attributes
+        response.should render_template("new")
+        assigns(:restaurant).branches.first.should be_a_new(Branch)
+        
       end
 
       it "re-renders the 'new' template" do

@@ -16,7 +16,7 @@ describe Restaurant do
     it "should save a restaurant without website" do
       restaurant = FactoryGirl.build(:restaurant, :website => nil)
       restaurant.save.should be_true      
-    end
+    end   
     
   end
 end
