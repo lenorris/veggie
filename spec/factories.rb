@@ -12,5 +12,12 @@ FactoryGirl.define do
     street_address "Hämeentie 15"
     city "Helsinki"
   end
+
+  factory :user do
+    username "user"
+    email "user@user.org"
+    password "userpass"
+  end
+
   
 end

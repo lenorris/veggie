@@ -6,6 +6,7 @@ fi:
   hello: "Moi"
   settings: "Settings"
   logout: "Logout"
+  register: "Register"
   
   # Restaurant
   restaurants_button: "Ravintolat ›"

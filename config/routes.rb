@@ -5,8 +5,8 @@ Veggie::Application.routes.draw do
   
   match "/logout" => "sessions#destroy", :as => "logout"
   match "/login" => "sessions#new", :as => "login"
-  match "/main" => "restaurants#index", :as => "main"
-    
+  match "/register" => "users#new", :as => "register"
+      
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -18,9 +18,12 @@
       %li 
         - if current_user
           =t :hello 
-          %a{:href => "#"}= current_user.email
+          %a{:href => "#"}= current_user.username
       %li 
-        %a#settings{:href => "#"}=t :settings
+        - if current_user
+          %a#settings{:href => "#"}=t :settings
+        - else
+          %a#settings{:href => register_url}=t :register        
       %li
         - if current_user
           %a#logout{:href => logout_url }=t :logout
