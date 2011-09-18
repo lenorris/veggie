@@ -1,0 +1,4 @@
+MetricFu::Configuration.run do |config|
+  config.metrics -=  [:flog] # [ :reek, :flay, :flog ]
+end
+
