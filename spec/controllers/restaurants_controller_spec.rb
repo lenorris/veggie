@@ -40,10 +40,21 @@ describe RestaurantsController do
   end
 
   describe "GET show" do
-    it "assigns the requested restaurant as @restaurant" do
-      restaurant = FactoryGirl.create(:restaurant)
-      get :show, :id => restaurant.id.to_s
-      assigns(:restaurant).should eq(restaurant)
+    
+    context "with valid id" do
+      it "assigns the requested restaurant as @restaurant" do
+        restaurant = FactoryGirl.create(:restaurant)
+        get :show, :id => restaurant.id.to_s
+        assigns(:restaurant).should eq(restaurant)
+      end
+    end
+    
+    context "with invalid id " do 
+      it "redirects to restaurant index and displays an error message" do
+        get :show, :id => 'trololololo'
+        response.should be_redirect
+        flash[:notice].should_not be_empty
+      end
     end
   end
 
