@@ -14,8 +14,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-    @restaurant = Restaurant.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @restaurant }
@@ -36,7 +35,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1/edit
   def edit
-    @restaurant = Restaurant.find(params[:id])
+    
   end
 
   # POST /restaurants
@@ -58,7 +57,6 @@ class RestaurantsController < ApplicationController
   # PUT /restaurants/1
   # PUT /restaurants/1.json
   def update
-    @restaurant = Restaurant.find(params[:id])
 
     respond_to do |format|
       if @restaurant.update_attributes(params[:restaurant])
@@ -74,7 +72,6 @@ class RestaurantsController < ApplicationController
   # DELETE /restaurants/1
   # DELETE /restaurants/1.json
   def destroy
-    @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy
 
     respond_to do |format|
