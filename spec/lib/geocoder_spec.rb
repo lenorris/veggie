@@ -10,11 +10,14 @@ describe Geocoder do
     @responses = {:ok => "OK", :empty => "ZERO_RESULTS", :over_limit => "OVER_QUERY_LIMIT", :denied => "REQUEST_DENIED", :invalid => "INVALID_REQUEST"}
   end
   
+  before(:each) do
+    # normally during tests geocoding is stopped at the beginning and mock answer returned
+    # to circumvent that we stub Rails.env
+    Rails.env.stub(:test?).and_return(false)
+  end
+  
   context "with a ok response" do
-    
-    before(:each) do
-    end
-    
+
     it "should parse the result and return lat and lng if results are unambiguous" do
       Net::HTTP.should_receive(:get).and_return(mock_google_api_response(1, @responses[:ok], @lat, @lng))
       lat, lng = Geocoder.get_latlng(@address)
@@ -63,6 +66,19 @@ describe Geocoder do
       lambda {Geocoder.get_latlng(@address)}.should raise_error(Geocoder::InvalidRequestError)
     end  
   
+  end
+  
+  context "mock responses" do
+    before (:all) do
+      @lat = 60.16794829999999
+      @lng = 24.93563410
+    end
+    
+    it "should return Bamboo Centers coordinates when rails environment is test" do
+      Rails.env.stub!(:test?).and_return(true) # stubbed because we stub it as false for all tests earlier
+      Geocoder.get_latlng('Trolololo').should == [@lat, @lng]
+    end   
+    
   end
   
 end

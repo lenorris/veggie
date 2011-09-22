@@ -5,6 +5,9 @@ module Geocoder
   
   
   def self.get_latlng(address)
+    
+    return mock_answer if Rails.env.test?
+    
     url_encoded_address = URI.encode(address)
     base_uri = ("http://maps.googleapis.com/maps/api/geocode/json?address=#{url_encoded_address}&sensor=false&region=fi")
     uri = URI.parse(base_uri)
@@ -43,6 +46,13 @@ module Geocoder
   end
   class InvalidRequestError < GeocoderError 
   end
+  
+  private
+  
+  def self.mock_answer
+    [60.16794829999999, 24.93563410]
+  end
+  
 end
 
 
