@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110911100706) do
+ActiveRecord::Schema.define(:version => 20110918185313) do
 
   create_table "branches", :force => true do |t|
     t.integer  "restaurant_id"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20110911100706) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "branches", ["restaurant_id"], :name => "index_branches_on_restaurant_id"
