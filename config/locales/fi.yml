@@ -4,9 +4,11 @@ fi:
   slogan: "Veggie - parhaat kasvisruokapaikat!"
   your_are_here: "Olet täällä:"
   hello: "Moi"
-  settings: "Settings"
-  logout: "Logout"
-  register: "Register"
+  settings: "Asetukset"
+  logout: "Kirjaudu ulos"
+  register: "Rekisteröidy"
+  username: "Käyttäjänimi"
+  password: "Salasana"
   
   # Restaurant
   restaurants_button: "Ravintolat ›"

@@ -18,7 +18,7 @@
       %li 
         - if current_user
           =t :hello 
-          %a{:href => "#"}= current_user.username
+          %a{:href => "#"}= current_user.username + '!'
       %li 
         - if current_user
           %a#settings{:href => "#"}=t :settings
@@ -28,8 +28,13 @@
         - if current_user
           %a#logout{:href => logout_url }=t :logout
         - else
-          %a#login{:href => login_url }=t :login
+          = form_tag sessions_path do
+
+            = text_field_tag :username, params[:username], :value => t(:username)
+            = password_field_tag :password, params[:password], :value => t(:password )
+            = submit_tag "Log in"          
 
     %hr
     
+  
   .content#content= yield
