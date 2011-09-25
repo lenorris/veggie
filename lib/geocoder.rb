@@ -16,7 +16,7 @@ module Geocoder
     when "OK" # indicates that no errors occurred; the address was successfully parsed and at least one geocode was returned.
       results = response['results']
       if results.size == 1
-        latlng = results[0]['geometry']['location']
+        latlng = results.first['geometry']['location']
         return latlng['lat'], latlng['lng']
       else
         raise AddressAmbiguousError
@@ -29,22 +29,22 @@ module Geocoder
       raise RequestDeniedError, "Request denied. Check that URL is correct. URL was #{base_uri}"
     when "INVALID_REQUEST" # generally indicates that the query (address or latlng) is missing.
       raise InvalidRequestError, "Request was invalid. Check that URL is correct. URL was #{base_uri} "
-    end 
+    end
     
   end
 
   # Errors thrown (TODO: rethink this, might not be the best way to handle this)
-  class GeocoderError < StandardError  
+  class GeocoderError < StandardError
   end
-  class AddressAmbiguousError < GeocoderError 
+  class AddressAmbiguousError < GeocoderError
   end
-  class EmptyResultsError < GeocoderError 
+  class EmptyResultsError < GeocoderError
   end
-  class OverQueryLimitError < GeocoderError 
+  class OverQueryLimitError < GeocoderError
   end
-  class RequestDeniedError < GeocoderError 
+  class RequestDeniedError < GeocoderError
   end
-  class InvalidRequestError < GeocoderError 
+  class InvalidRequestError < GeocoderError
   end
   
   private
