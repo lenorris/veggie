@@ -4,42 +4,98 @@ require "cancan/matchers"
 
 describe Ability do
   
-  context "logged in users" do
+  describe "logged in users" do
+    
     before(:each) do
       @user = FactoryGirl.create(:user)
       @ability = Ability.new(@user)
     end
-
-    it "should be able to create, read and update a restaurant" do
-      @ability.should be_able_to([:create, :update, :read], [Restaurant.new, Branch.new])
+    
+    context "restaurants" do
+      it "should be able to create a restaurant" do
+        @ability.should be_able_to(:create, Restaurant.new)
+      end
+      
+      it "should be able to read a restaurant" do
+        @ability.should be_able_to(:read, Restaurant.new)
+      end
+  
+      it "should be able to update a restaurant" do
+        @ability.should be_able_to(:update, Restaurant.new)
+      end
+      
+      it "should not be able to destroy a restaurant" do
+        @ability.should_not be_able_to(:destroy, Restaurant.new)
+      end
     end
     
-    it "should not be able to delete a restaurant or a branch" do
-      @ability.should_not be_able_to(:destroy, [Restaurant.new, Branch.new])
+    context "branches" do
+      it "should be able to create a branch" do
+        @ability.should be_able_to(:create, Branch.new)
+      end
+      
+      it "should be able to read a branch" do
+        @ability.should be_able_to(:read, Branch.new)
+      end
+  
+      it "should be able to update a branch" do
+        @ability.should be_able_to(:update, Branch.new)
+      end
+      
+      it "should not be able to destroy a branch" do
+        @ability.should_not be_able_to(:destroy, Branch.new)
+      end
+    end
+    
+    context "user accounts" do
+      it "should not be able to create a user account" do
+        @ability.should_not be_able_to(:create, User.new)
+      end
     end
     
   end
   
-  context "guests" do
+  describe "guests" do
     before(:each) do
       @ability = Ability.new(nil)
     end
     
-    it "should be able to create a user account" do
-      @ability.should be_able_to(:create, User.new)
+    context "user accounts" do
+      it "should be able to create a user account" do
+        @ability.should be_able_to(:create, User.new)
+      end
     end
     
-    it "should be able to read restaurants and branches" do
-      @ability.should be_able_to(:read, [Restaurant.new, Branch.new])
+    context "restaurants" do
+      it "should be able to read restaurant" do
+        @ability.should be_able_to(:read, Restaurant.new)
+      end
+      it "should not be able to create restaurant" do
+        @ability.should_not be_able_to(:create, Restaurant.new)
+      end
+      it "should not be able to update restaurant" do
+        @ability.should_not be_able_to(:update, Restaurant.new)
+      end
+      it "should not be able to destroy restaurant" do
+        @ability.should_not be_able_to(:destroy, Restaurant.new)
+      end
     end
     
-    it "should not be able to create, update, or destroy restaurants" do
-      @ability.should_not be_able_to([:create, :update, :destroy], Restaurant.new)
+    context "branches" do
+      it "should be able to read branch" do
+        @ability.should be_able_to(:read, Branch.new)
+      end
+      it "should not be able to create branch" do
+        @ability.should_not be_able_to(:create, Branch.new)
+      end
+      it "should not be able to update branch" do
+        @ability.should_not be_able_to(:update, Branch.new)
+      end
+      it "should not be able to destroy branch" do
+        @ability.should_not be_able_to(:destroy, Branch.new)
+      end
     end
-    
-    it "should not be able to create, update or destroy branches" do
-      @ability.should_not be_able_to([:create, :update, :destroy], Branch.new)
-    end
+     
   end
   
 end
