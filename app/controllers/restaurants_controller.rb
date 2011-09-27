@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
   before_filter :find_restaurant, :except => [:index, :new, :create]
+  load_and_authorize_resource
+
   # GET /restaurants
   # GET /restaurants.json
   def index
@@ -87,7 +89,7 @@ class RestaurantsController < ApplicationController
       @restaurant = Restaurant.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       redirect_to restaurants_path, :notice => "Restaurant with given ID wasn't found"
-    end  
+    end
   end
   
 end

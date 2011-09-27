@@ -19,13 +19,23 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe RestaurantsController do
+ 
+  # stub current_ability and return an ability that allows everything
+  # TODO: write separate controller tests for abilities
+  before(:each) do
+    @ability = Object.new
+    @ability.extend(CanCan::Ability)
+    @ability.can(:manage, :all)
+    @controller.stub!(:current_ability).and_return(@ability)
+
+  end
 
   # This should return the minimal set of attributes required to create a valid
   # Restaurant. As you add validations to Restaurant, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
     {:name => "Tony's deli", :info => "Excellent italian",
-      :branches_attributes => { 
+      :branches_attributes => {
         '0' => {:street_address => 'Annankatu 15', :city => 'Helsinki'}
       }
     }
@@ -49,7 +59,7 @@ describe RestaurantsController do
       end
     end
     
-    context "with invalid id " do 
+    context "with invalid id " do
       it "redirects to restaurant index and displays an error message" do
         get :show, :id => 'trololololo'
         response.should be_redirect

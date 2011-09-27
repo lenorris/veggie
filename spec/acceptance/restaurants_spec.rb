@@ -1,8 +1,18 @@
 require 'spec_helper'
  
 describe 'adding a restaurant', :type => :request  do
+  
+  before(:each) do
+    @username = 'haxxxor'
+    @password = 'topsecret'
+    @user = FactoryGirl.create(:user, :username => @username, :password => @password )
+  end
  
 it 'should create a restaurant' do
+    visit '/'
+    fill_in 'username', :with => @username
+    fill_in 'password', :with => @password
+    click_button 'Log in'
     visit '/restaurants'
     click_link 'New Restaurant'
     fill_in 'Name', :with => "Tony's bistro"
