@@ -37,4 +37,7 @@
     %hr
     
   
-  .content#content= yield
+  .content#content
+    -flash.each do |key, msg|
+      =content_tag :div, msg, :id => key
+    = yield
