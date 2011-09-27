@@ -1,12 +1,9 @@
 Veggie::Application.routes.draw do
+  devise_for :users
+
   resources :restaurants
-  resources :users
-  resources :sessions  
-  
-  match "/logout" => "sessions#destroy", :as => "logout"
-  match "/login" => "sessions#new", :as => "login"
-  match "/register" => "users#new", :as => "register"
-      
+#  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

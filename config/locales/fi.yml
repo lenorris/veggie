@@ -7,9 +7,9 @@ fi:
   settings: "Asetukset"
   logout: "Kirjaudu ulos"
   register: "Rekisteröidy"
-  username: "Käyttäjänimi"
+  login: "Käyttäjänimi tai e-mail"
   password: "Salasana"
-  
+
   # Restaurant
   restaurants_button: "Ravintolat ›"
   search_from_veggie: "Hae Veggiestä"

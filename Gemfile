@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'haml-rails'
+gem 'devise' #authentication
 gem 'cancan' #authorization
 # Gems used only for assets and not required
 # in production environments by default.

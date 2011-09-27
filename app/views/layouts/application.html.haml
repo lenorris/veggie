@@ -2,41 +2,42 @@
 %html
   %head
   %title Veggie
-  = stylesheet_link_tag    "application" 
-  = javascript_include_tag "application" 
+  = stylesheet_link_tag    "application"
+  = javascript_include_tag "application"
   = yield :script
   = csrf_meta_tags
 
 %body
 
   #header
-    %p.breadcrumb 
+    %p.breadcrumb
       =t :your_are_here
-      %a{:href => "#"} Veggie Helsinki &gt; 
+      %a{:href => root_path} Veggie Helsinki &gt;
       %a{:href => "#"} Ravintolat
     %ul#profile.rounded
-      %li 
-        - if current_user
-          =t :hello 
+      %li
+        - if user_signed_in?
+          =t :hello
           %a{:href => "#"}= current_user.username + '!'
-      %li 
-        - if current_user
-          %a#settings{:href => "#"}=t :settings
-        - else
-          %a#settings{:href => register_url}=t :register        
       %li
         - if current_user
-          %a#logout{:href => logout_url }=t :logout
+          %a#settings{:href => edit_user_registration_path}=t :settings
         - else
-          = form_tag sessions_path do
+          %a#settings{:href => new_user_registration_path}=t :register
+      %li
+        - if user_signed_in?
+          %a#logout
+            =link_to t(:logout), destroy_user_session_path, :method => :delete
+        - else
+          = form_tag new_user_session_path do
 
-            = text_field_tag :username, params[:username], :value => t(:username)
-            = password_field_tag :password, params[:password], :value => t(:password )
-            = submit_tag "Log in"          
+            = text_field_tag 'user[login]', params[:login], :placeholder => t(:login)
+            = password_field_tag 'user[password]', params[:password], :placeholder => t(:password)
+            = submit_tag "Log in"
 
     %hr
-    
-  
+
+
   .content#content
     -flash.each do |key, msg|
       =content_tag :div, msg, :id => key
