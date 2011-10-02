@@ -23,14 +23,14 @@ describe "restaurants/new.html.haml" do
     render
     
     rendered.should have_selector('form#new_restaurant')
-    rendered.should have_field('Name')
-    rendered.should have_field('Website')
-    rendered.should have_field('Info')
+    rendered.should have_field('restaurant_name')
+    rendered.should have_field('restaurant_website')
+    rendered.should have_field('restaurant_info')
     rendered.should have_field("restaurant_branches_attributes_0_street_address")
-    rendered.should have_field('City')
+    rendered.should have_field('restaurant_branches_attributes_0_city')
     rendered.should have_field('restaurant_branches_attributes_0_business_hours')
-    rendered.should have_field('Phone')
-    rendered.should have_field('Email')
+    rendered.should have_field('restaurant_branches_attributes_0_phone')
+    rendered.should have_field('restaurant_branches_attributes_0_email')
     
   end
 end

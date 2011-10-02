@@ -15,12 +15,12 @@ it 'should create a restaurant' do
     click_button 'Log in'
     visit '/restaurants'
     click_link 'New Restaurant'
-    fill_in 'Name', :with => "Tony's bistro"
-    fill_in 'Website', :with => "http://www.tonys.fi"
-    fill_in 'Info', :with => 'Great italian bistro!'
+    fill_in 'restaurant_name', :with => "Tony's bistro"
+    fill_in 'restaurant_website', :with => "http://www.tonys.fi"
+    fill_in 'restaurant_info', :with => 'Great italian bistro!'
     fill_in 'restaurant[branches_attributes][0][street_address]', :with => 'Annankatu 32'
-    fill_in 'City', :with => 'Helsinki'
-    click_button 'Create Restaurant'
-    page.should have_content('Restaurant was successfully created.')
+    fill_in 'restaurant[branches_attributes][0][city]', :with => 'Helsinki'
+    click_button 'Luo ravintola'
+    page.should have_content(I18n.t('succesfully_created'))
   end
 end
