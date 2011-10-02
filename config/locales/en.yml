@@ -2,4 +2,25 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  # Application
+  slogan: "Veggie - best vegan restaurants"
+  your_are_here: "You are here:"
   hello: "Hi"
+  settings: "Settings"
+  logout: "Log out"
+  register: "Register"
+  login: "Username or email"
+  password: "Password"
+
+  # Restaurant
+  restaurants_button: "Restaurants ›"
+  search_from_veggie: "Search Veggie"
+  cant_find_from_veggie: "Can't find your favorite restaurant?"
+  add_restaurant: "Add a restaurant"
+  add_your_restaurant: "Add your favorite restaurant to Veggie ›"
+  browse_the_restaurants_by: "You can browse restaurants:"
+  by_map: "By map"
+  by_tags: "By tags"
+  by_reviews: "By reviews"
+  by_alphabetical_list: "By alphabetical list"
+  last_added: "Last added:"
