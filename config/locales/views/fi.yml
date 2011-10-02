@@ -23,3 +23,13 @@ fi:
   by_alphabetical_list: "Aakkosellisen hakemiston avulla"
   last_added: "Viimeksi lisätyt:"
   succesfully_created: "Ravintola lisättiin onnistuneesti."
+
+  breadcrumbs:
+    controllers:
+      restaurants: "Ravintolat"
+    restaurants:
+      new: "Luo uusi"
+      edit: "Muokkaa"
+    users:
+      edit: "Muokkaa asetuksiasi"
+      new: "Rekisteröidy"

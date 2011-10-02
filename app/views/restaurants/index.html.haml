@@ -1,13 +1,13 @@
 #toolbar
-  =image_tag("logo.png", :alt => t(:slogan)) 
-  %a.navi.button{:href => "#"}= t(:restaurants_button)
+  =image_tag("logo.png", :alt => t(:slogan))
+  =link_to(t(:restaurants_button), restaurants_path, :class => "navi button")
   %form
     %input{:type => "text", :value => t(:search_from_veggie) }
   %hr
   %select
     %option Veggie Helsinki
     %option Veggie Tampere
-    %option Veggie Turku             
+    %option Veggie Turku
   %hr
   %p
     =t :cant_find_from_veggie
@@ -16,7 +16,7 @@
   
 #top
   %h1 Ravintolat
-  %a.button{:href => "#"}=t :add_your_restaurant
+  =link_to(t(:add_your_restaurant), restaurants_path, :class => "button")
 
 #shortcuts
   %h6=t :browse_the_restaurants_by
@@ -26,11 +26,11 @@
     %a{:href => "#"}=t :by_tags
     &bull;
     %a{:href => "#"}=t :by_reviews
-    &bull;        
+    &bull;
     %a{:href => "#"}=t :by_alphabetical_list
   
 #map
-  - unless @restaurants.empty? 
+  - unless @restaurants.empty?
     =render :partial => 'map', :locals => { :lat => '60.167587391426764', :lng => '24.9375057220459', :restaurant => @restaurants.first }
 
 
@@ -40,21 +40,21 @@
     %li
       %a{:href => "#"}lorem ipsum
       (30)
-    %li  
+    %li
       %a{:href => "#"}dolor
       (30)
-    %li  
+    %li
       %a{:href => "#"}sit amen
       (30)
-    %li  
+    %li
       %a{:href => "#"}consectetur
-      (30)                  
-    %li  
+      (30)
+    %li
       %a{:href => "#"}elit
-      (30)                  
+      (30)
 
   %p.showall
-    Ja 51 lis&auml;&auml;. 
+    Ja 51 lis&auml;&auml;.
     %a{:href => "#"}N&auml;yt&auml; kaikki &raquo;
 
 
@@ -67,7 +67,7 @@
             %p.stars 4.8
             %p.hearts 21
           %li
-            %a{:href => "#" }Ravintolan nimi lorem ipsum 
+            %a{:href => "#" }Ravintolan nimi lorem ipsum
             %p.stars 4.8
             %p.hearts 21
 
@@ -82,15 +82,15 @@
       %th Info
       %th
       %th
-      %th 
-    - @restaurants.each do |restaurant| 
+      %th
+    - @restaurants.each do |restaurant|
       %tr
-        %td= restaurant.name 
+        %td= restaurant.name
         %td= restaurant.website
-        %td= restaurant.info 
+        %td= restaurant.info
         %td= link_to 'Show', restaurant
         %td= link_to 'Edit', edit_restaurant_path(restaurant)
-        %td= link_to 'Destroy', restaurant, confirm: 'Are you sure?', method: :delete   
+        %td= link_to 'Destroy', restaurant, confirm: 'Are you sure?', method: :delete
 
   %br
 

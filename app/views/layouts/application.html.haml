@@ -12,8 +12,7 @@
   #header
     %p.breadcrumb
       =t :your_are_here
-      %a{:href => root_path} Veggie Helsinki &gt;
-      %a{:href => "#"} Ravintolat
+      =render_breadcrumbs
     %ul#profile.rounded
       %li
         - if user_signed_in?

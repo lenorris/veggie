@@ -1,3 +1,5 @@
+-add_breadcrumb "Veggie", :root_path
+-add_breadcrumb I18n.t("breadcrumbs.users.new"), new_user_registration_path
 %h2 Sign up
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!

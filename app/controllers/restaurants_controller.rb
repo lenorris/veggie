@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
   before_filter :find_restaurant, :except => [:index, :new, :create]
+  add_breadcrumb I18n.t('breadcrumbs.controllers.restaurants'), :restaurants_path
   load_and_authorize_resource
 
   # GET /restaurants
@@ -16,7 +17,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-    
+    add_breadcrumb @restaurant.name, restaurant_path(@restaurant)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @restaurant }
@@ -26,6 +27,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/new
   # GET /restaurants/new.json
   def new
+    add_breadcrumb I18n.t('breadcrumbs.restaurants.new'), new_restaurant_path
     @restaurant = Restaurant.new
     @restaurant.branches.build
 
@@ -37,7 +39,9 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1/edit
   def edit
-    
+    add_breadcrumb @restaurant.name, restaurant_path(@restaurant)
+    add_breadcrumb I18n.t('breadcrumbs.restaurants.edit'), edit_restaurant_path
+
   end
 
   # POST /restaurants
