@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    models:
+      restaurant: "restaurant"
+      branch: "branch"
+    attributes:
+      restaurant:
+        name: "Name"
+        website: "Website"
+        info: "Description"
+      branch:
+        street_address: "Street address"
+        city: "City"
+        phone:  "Phone number"
+        business_hours: "Business hours"
+        email:  "Email"

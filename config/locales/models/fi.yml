@@ -1,0 +1,17 @@
+fi:
+  activerecord:
+    models:
+      restaurant: "ravintola"
+      branch: "toimipiste"
+    attributes:
+      restaurant:
+        name: "Nimi"
+        website: "Nettisivut"
+        info: "Kuvaus"
+      branch:
+        street_address: "Katuosoite"
+        city: "Kaupunki"
+        phone: "Puhelinnumero"
+        business_hours: "Aukioloajat"
+        email:  "Sähköposti"
+
