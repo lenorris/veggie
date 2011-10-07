@@ -1,0 +1,7 @@
+%div{:class => "comment strongly-rounded #{cycle("odd", "even")}"}
+  %h3
+    = comment.username
+    = t('comments.said')
+    = l(comment.created_at, :format => :short)
+
+  = simple_format comment.body

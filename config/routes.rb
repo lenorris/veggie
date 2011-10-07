@@ -1,7 +1,10 @@
 Veggie::Application.routes.draw do
+  
   devise_for :users
 
-  resources :restaurants
+  resources :restaurants do
+    resources :comments, :only => [:index, :create]
+  end
 #  resources :users
 
   # The priority is based upon order of creation:

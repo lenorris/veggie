@@ -3,6 +3,7 @@ fi:
     models:
       restaurant: "ravintola"
       branch: "toimipiste"
+      comment: "kommentti"
     attributes:
       restaurant:
         name: "Nimi"
@@ -14,4 +15,5 @@ fi:
         phone: "Puhelinnumero"
         business_hours: "Aukioloajat"
         email:  "Sähköposti"
-
+      comment:
+        body: "Kommentti"

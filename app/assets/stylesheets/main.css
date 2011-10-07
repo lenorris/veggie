@@ -5,7 +5,7 @@
 	text-align: left;
 	font-size: 75%;
 	line-height: 150%;
-	}	
+	}
 	a, a:link, a:visited {
 	color: #eb4600;
 	text-decoration: none;
@@ -41,7 +41,7 @@
 	h1, h2 {
 	font-weight: bold;
 	color: #333;
-	}	
+	}
 	h1 {
 	font-size: 24px;
 	}
@@ -92,6 +92,13 @@
     -khtml-border-radius: 3px;
     border-radius: 3px;
 	}
+  
+  .strongly-rounded {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+  }
 
 /* TOP */
 	div#content div#top {

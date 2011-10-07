@@ -12,6 +12,18 @@
 
 #map= render :partial => 'map', :locals => { :lat => '60.167587391426764', :lng => '24.9375057220459', :restaurant => @restaurant }
 
-= link_to 'Edit', edit_restaurant_path(@restaurant) 
+%span#comments-count
+  = @restaurant.comments.count
+  = t('comments.count')
+
+#comments= render @restaurant.comments
+
+#comments-notice
+
+%h3=t("comments.add")
+
+= render :partial => "comments/form", :locals => {:restaurant => @restaurant, :comment => Comment.new}
+
+= link_to 'Edit', edit_restaurant_path(@restaurant)
 |
 = link_to 'Back', restaurants_path

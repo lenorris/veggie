@@ -1,0 +1,21 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#comments {
+
+  .odd {
+    background-color:#81F781;
+  }
+
+  .even {
+    background-color:#CEE3F6;
+  }
+
+  #comments-count {
+    padding-top:20px;
+  }
+  .comment {
+    padding:20px;
+    margin-bottom:10px;
+  }
+}

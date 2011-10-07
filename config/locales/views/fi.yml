@@ -24,6 +24,12 @@ fi:
   last_added: "Viimeksi lisätyt:"
   succesfully_created: "Ravintola lisättiin onnistuneesti."
 
+  comments:
+    add: "Lisää kommenttisi"
+    count: "kommenttia."
+    thanks: "Kiitos kommentistasi."
+    said: "sanoi"
+
   breadcrumbs:
     controllers:
       restaurants: "Ravintolat"

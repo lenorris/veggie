@@ -3,6 +3,7 @@ en:
     models:
       restaurant: "restaurant"
       branch: "branch"
+      comment: "comment"
     attributes:
       restaurant:
         name: "Name"
@@ -14,3 +15,5 @@ en:
         phone:  "Phone number"
         business_hours: "Business hours"
         email:  "Email"
+      comment:
+        body: "Body"
