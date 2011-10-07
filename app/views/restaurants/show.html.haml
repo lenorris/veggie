@@ -14,7 +14,7 @@
       %h2= t('restaurants.contact_details')
       %p= branch.phone
       %p= mail_to branch.email
-      %p= link_to branch.website
+      %p= link_to branch.website, branch.website
       
   .clear
 
@@ -23,7 +23,7 @@
 
 #description.bottom-border
   %h2= t('activerecord.attributes.restaurant.info')
-  %p= @restaurant.info
+  %p= simple_format @restaurant.info
 
 = link_to 'Edit', edit_restaurant_path(@restaurant)
 |
