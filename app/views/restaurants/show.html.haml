@@ -1,17 +1,30 @@
-%p
-  %b Name
-  = @restaurant.name
+.restaurant-heading
+  %h1= @restaurant.name
 
-%p
-  %b Website:
-  = @restaurant.website
+.restaurant-contact-info.darker-background
+  - @restaurant.branches.each do |branch|
+    .contact-details
+      %h2= t('restaurants.open')
+      %p= branch.business_hours
+    .contact-details
+      %h2=t('restaurants.address')
+      %p= branch.street_address
+      %p= branch.city
+    .contact-details
+      %h2= t('restaurants.contact_details')
+      %p= branch.phone
+      %p= mail_to branch.email
+      %p= link_to branch.website
+      
+  .clear
 
-%p
-  %b Info:
-  = @restaurant.info
+#map
+  = render :partial => 'map', :locals => { :lat => '60.167587391426764', :lng => '24.9375057220459', :restaurant => @restaurant }
 
-#map= render :partial => 'map', :locals => { :lat => '60.167587391426764', :lng => '24.9375057220459', :restaurant => @restaurant }
+#description.bottom-border
+  %h2= t('activerecord.attributes.restaurant.info')
+  %p= @restaurant.info
 
-= link_to 'Edit', edit_restaurant_path(@restaurant) 
+= link_to 'Edit', edit_restaurant_path(@restaurant)
 |
 = link_to 'Back', restaurants_path

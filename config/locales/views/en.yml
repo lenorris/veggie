@@ -26,6 +26,11 @@ en:
   last_added: "Last added:"
   succesfully_created: "Restaurant was succesfully added."
   
+  restaurants:
+    open: "Business hours:"
+    address: "Address:"
+    contact_details: "Contact:"
+  
   breadcrumbs:
     controllers:
       restaurants: "Restaurants"
