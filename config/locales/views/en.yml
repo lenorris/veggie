@@ -32,6 +32,11 @@ en:
     thanks: "Thank you for commenting."
     said: "said"
   
+  restaurants:
+    open: "Business hours:"
+    address: "Address:"
+    contact_details: "Contact:"
+  
   breadcrumbs:
     controllers:
       restaurants: "Restaurants"

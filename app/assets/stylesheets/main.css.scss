@@ -1,6 +1,8 @@
+@import "variables";
+
 /* UNIVERSAL */
 	body {
-	background: #e9f5f6;
+	background: $background-color;
 	font-family: "trebuchet ms",verdana,sans-serif;
 	text-align: left;
 	font-size: 75%;
@@ -98,6 +100,13 @@
     -webkit-border-radius: 10px;
     -khtml-border-radius: 10px;
     border-radius: 10px;
+  }
+  .darker-background {
+    background-color: #f8f8f8;
+  }
+  
+  .bottom-border {
+    border-bottom: 5px solid $background-color;
   }
 
 /* TOP */
