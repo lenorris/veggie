@@ -56,10 +56,10 @@ describe RestaurantsController do
     end
     
     context "with invalid id " do
-      it "redirects to restaurant index and displays an error message" do
+      it "redirects to root page and displays an error message" do
         get :show, :id => 'trololololo'
-        response.should be_redirect
-        flash[:notice].should_not be_empty
+        response.should redirect_to(root_path)
+        flash[:alert].should_not be_empty
       end
     end
   end
