@@ -16,7 +16,7 @@ FactoryGirl.define do
   factory :user do
     username "user"
     email "user@user.org"
-    password "userpass"
+    password "userpass12321321£@$£@532"
   end
 
   factory :comment do
