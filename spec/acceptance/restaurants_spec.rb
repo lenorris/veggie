@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'acceptance_spec_helper'
  
 describe 'adding a restaurant', :type => :request  do
   
@@ -9,10 +10,7 @@ describe 'adding a restaurant', :type => :request  do
   end
  
 it 'should create a restaurant' do
-    visit '/'
-    fill_in 'user_login', :with => @username
-    fill_in 'user_password', :with => @password
-    click_button 'Log in'
+    login(@username, @password)
     visit '/restaurants'
     click_link 'New Restaurant'
     fill_in 'restaurant_name', :with => "Tony's bistro"
