@@ -30,6 +30,21 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+  
+  # database_cleaner because selenium doesn't handle transactional fixtures
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.strategy = :truncation
+  end
+      
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+       
+  config.after(:each) do
+   DatabaseCleaner.clean
+  end
+  
 end
 
 def mock_google_api_response(results_size, status, lat, lng)
