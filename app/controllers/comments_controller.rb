@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  respond_to :html, :js
+  respond_to :js
   before_filter :find_restaurant
   
   def create
