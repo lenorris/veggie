@@ -93,8 +93,17 @@ def mock_google_api_response(results_size, status, lat, lng)
           },
           "types" => [ "street_address" ]
         }
-        results << result
-      end
-      json_response = {"results" => results, "status" => status }.to_s.gsub("=>", ":")
-      return json_response
+      results << result
     end
+  json_response = {"results" => results, "status" => status }.to_s.gsub("=>", ":")
+  json_response
+end
+
+def mock_ability
+  @ability = Object.new
+  @ability.extend(CanCan::Ability)
+  @ability.can(:manage, :all)
+  @controller.stub!(:current_ability).and_return(@ability)
+end
+    
+    

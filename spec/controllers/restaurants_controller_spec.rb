@@ -23,11 +23,7 @@ describe RestaurantsController do
   # stub current_ability and return an ability that allows everything
   # TODO: write separate controller tests for abilities
   before(:each) do
-    @ability = Object.new
-    @ability.extend(CanCan::Ability)
-    @ability.can(:manage, :all)
-    @controller.stub!(:current_ability).and_return(@ability)
-
+    mock_ability
   end
 
   # This should return the minimal set of attributes required to create a valid
