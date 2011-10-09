@@ -4,14 +4,14 @@
 .restaurant-contact-info.darker-background
   - @restaurant.branches.each do |branch|
     .contact-details
-      %h2= t('restaurants.open')
+      %h6= t('restaurants.open')
       %p= branch.business_hours
     .contact-details
-      %h2=t('restaurants.address')
+      %h6=t('restaurants.address')
       %p= branch.street_address
       %p= branch.city
     .contact-details
-      %h2= t('restaurants.contact_details')
+      %h6= t('restaurants.contact_details')
       %p= branch.phone
       %p= mail_to branch.email
       %p= link_to branch.website, branch.website
@@ -25,17 +25,15 @@
   %h2= t('activerecord.attributes.restaurant.info')
   %p= simple_format @restaurant.info
 
-%span#comments-count
-  = @restaurant.comments.count
-  = t('comments.count')
 
-#comments= render @restaurant.comments
-
-#comments-notice
-
-%h3=t("comments.add")
-
-= render :partial => "comments/form", :locals => {:restaurant => @restaurant, :comment => Comment.new}
+#comments-block
+  #comments
+    %h2=t('comments.title')
+    = render @restaurant.comments
+  
+  #comments-notice
+  
+  = render :partial => "comments/form", :locals => {:restaurant => @restaurant, :comment => Comment.new}
 
 = link_to 'Edit', edit_restaurant_path(@restaurant)
 |

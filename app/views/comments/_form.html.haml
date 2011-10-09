@@ -1,10 +1,11 @@
 = form_for([restaurant, comment], :remote => true) do |f|
+  %h3=t("comments.add")
+
   - if comment.errors.any?
     #error_explanation
       - comment.errors.full_messages.each do |msg|
         %li=msg
   .field
-    = f.label :body
     = f.text_area :body
   .actions
-    =f.submit
+    =f.submit :class => 'button'

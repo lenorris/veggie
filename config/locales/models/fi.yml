@@ -17,3 +17,9 @@ fi:
         email:  "Sähköposti"
       comment:
         body: "Kommentti"
+        
+  # for form builder helper to customize submit buttons
+  helpers:
+    submit:
+      comment:
+        create: "Lähetä ›"

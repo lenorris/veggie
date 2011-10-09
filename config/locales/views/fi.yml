@@ -31,8 +31,8 @@ fi:
     contact_details: "Yhteystiedot:"
 
   comments:
-    add: "Lisää kommenttisi"
-    count: "kommenttia."
+    title: "Kommentit:"
+    add: "Lisää oma kommenttisi"
     thanks: "Kiitos kommentistasi."
     said: "sanoi"
 

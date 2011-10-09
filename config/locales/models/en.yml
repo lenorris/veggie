@@ -17,3 +17,10 @@ en:
         email:  "Email"
       comment:
         body: "Body"
+        
+  # for form builder helper to customize submit buttons
+  helpers:
+    submit:
+      comment:
+        create: "Send ›"
+    

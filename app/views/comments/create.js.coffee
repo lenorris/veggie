@@ -15,14 +15,8 @@ $('#new_comment').fadeOut()
 
 notice = $('<div>')
   .append('<%= t('comments.thanks') %>')
-  .addClass('notice')
+  .attr('id', 'notice')
   
 $('#comments-notice').html(notice)
-
-count = $('<p>')
-  .append('<%= @restaurant.comments.count %> ')
-  .append('<%= t('restaurants.comments_count') %>')
-
-$('#comments-count').html(count)
 
 <% end %>

@@ -15,22 +15,35 @@
 	a:hover {
 	text-decoration: underline;
 	}
-	a.button {
-	padding: 5px 10px;
-	background: #eb4600;
-	color: #fff;
-	font-weight: bold;
-	text-transform: uppercase;
-	text-shadow: #da3500 1px 1px 0px;
-	-moz-border-radius: 3px;
+  
+  .button {
+  	background: $button-color;
+    color: $button-text-color;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  	text-shadow: #da3500 1px 1px 0px;
+  	-moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     -khtml-border-radius: 3px;
     border-radius: 3px;
+    
+    &:hover {
+  	  background: #ef6b33;
+  	  text-decoration: none;
+    }
 	}
-	a.button:hover {
-	background: #ef6b33;
-	text-decoration: none;
-	}
+  
+  a.button {
+	  padding: 5px 10px;
+    color: $button-text-color;
+  }
+  
+  input.button {
+    font-weight:normal;
+    padding:3px;
+    border:0;
+  }
+  
 	hr {
 	border: 0;
 	height: 5px;
@@ -40,7 +53,7 @@
 	margin: 0;
 	padding: 0;
 	}
-	h1, h2 {
+	h1, h2, h3 {
 	font-weight: bold;
 	color: #333;
 	}
@@ -51,6 +64,11 @@
 	font-size: 16px;
 	margin-bottom: 15px;
 	}
+  h3 {
+  font-size:12px;
+  margin-bottom:5px;
+  }
+  
 	h6 {
 	color: #999;
 	font-size: 10px;
@@ -93,14 +111,8 @@
     -webkit-border-radius: 3px;
     -khtml-border-radius: 3px;
     border-radius: 3px;
-	}
-  
-  .strongly-rounded {
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    border-radius: 10px;
   }
+  
   .darker-background {
     background-color: #f8f8f8;
   }

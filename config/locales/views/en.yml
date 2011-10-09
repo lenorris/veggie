@@ -27,8 +27,8 @@ en:
   succesfully_created: "Restaurant was succesfully added."
     
   comments:
+    title: "Comments:"
     add: "Add your comment"
-    count: "comments"
     thanks: "Thank you for commenting."
     said: "said"
   
