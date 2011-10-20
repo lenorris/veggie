@@ -1,11 +1,13 @@
+@import "variables";
+
 /* UNIVERSAL */
 	body {
-	background: #e9f5f6;
+	background: $background-color;
 	font-family: "trebuchet ms",verdana,sans-serif;
 	text-align: left;
 	font-size: 75%;
 	line-height: 150%;
-	}	
+	}
 	a, a:link, a:visited {
 	color: #eb4600;
 	text-decoration: none;
@@ -41,7 +43,7 @@
 	h1, h2 {
 	font-weight: bold;
 	color: #333;
-	}	
+	}
 	h1 {
 	font-size: 24px;
 	}
@@ -92,6 +94,14 @@
     -khtml-border-radius: 3px;
     border-radius: 3px;
 	}
+  
+  .darker-background {
+    background-color: #f8f8f8;
+  }
+  
+  .bottom-border {
+    border-bottom: 5px solid $background-color;
+  }
 
 /* TOP */
 	div#content div#top {

@@ -5,6 +5,7 @@ class Branch < ActiveRecord::Base
   validates :street_address, :city, :presence => true
   before_save :geocode, :if => :needs_geocoding?
   attr_accessible :street_address, :city, :phone, :email, :business_hours
+  delegate :website, :to => :restaurant
 
   private
   

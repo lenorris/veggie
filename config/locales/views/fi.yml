@@ -23,6 +23,12 @@ fi:
   by_alphabetical_list: "Aakkosellisen hakemiston avulla"
   last_added: "Viimeksi lisätyt:"
   succesfully_created: "Ravintola lisättiin onnistuneesti."
+  
+  #TODO: move all the above under namespace restaurants
+  restaurants:
+    open: "Avoinna:"
+    address: "Osoite:"
+    contact_details: "Yhteystiedot:"
 
   breadcrumbs:
     controllers:
