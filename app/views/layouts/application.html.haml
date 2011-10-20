@@ -41,3 +41,10 @@
     -flash.each do |key, msg|
       =content_tag :div, msg, :id => key
     = yield
+
+  #footer
+    .div
+      =t :your_are_here
+      =render_breadcrumbs
+    .search
+      search

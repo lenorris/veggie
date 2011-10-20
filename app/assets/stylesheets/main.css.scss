@@ -2,91 +2,91 @@
 
 /* UNIVERSAL */
 	body {
-	background: $background-color;
-	font-family: "trebuchet ms",verdana,sans-serif;
-	text-align: left;
-	font-size: 75%;
-	line-height: 150%;
+  	background: $background-color;
+  	font-family: "trebuchet ms",verdana,sans-serif;
+  	text-align: left;
+  	font-size: 75%;
+  	line-height: 150%;
 	}
 	a, a:link, a:visited {
-	color: #eb4600;
-	text-decoration: none;
+  	color: #eb4600;
+  	text-decoration: none;
 	}
 	a:hover {
-	text-decoration: underline;
+  	text-decoration: underline;
 	}
 	a.button {
-	padding: 5px 10px;
-	background: #eb4600;
-	color: #fff;
-	font-weight: bold;
-	text-transform: uppercase;
-	text-shadow: #da3500 1px 1px 0px;
-	-moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -khtml-border-radius: 3px;
-    border-radius: 3px;
+  	padding: 5px 10px;
+  	background: #eb4600;
+  	color: #fff;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  	text-shadow: #da3500 1px 1px 0px;
+  	-moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -khtml-border-radius: 3px;
+      border-radius: 3px;
 	}
 	a.button:hover {
-	background: #ef6b33;
-	text-decoration: none;
+  	background: #ef6b33;
+  	text-decoration: none;
 	}
 	hr {
-	border: 0;
-	height: 5px;
-	width: 800px;
-	clear: both;
-	background: #e9f5f6;
-	margin: 0;
-	padding: 0;
+  	border: 0;
+  	height: 5px;
+  	width: 800px;
+  	clear: both;
+  	background: #e9f5f6;
+  	margin: 0;
+  	padding: 0;
 	}
 	h1, h2 {
-	font-weight: bold;
-	color: #333;
+  	font-weight: bold;
+  	color: #333;
 	}
 	h1 {
-	font-size: 24px;
+  	font-size: 24px;
 	}
 	h2 {
-	font-size: 16px;
-	margin-bottom: 15px;
+  	font-size: 16px;
+  	margin-bottom: 15px;
 	}
 	h6 {
-	color: #999;
-	font-size: 10px;
-	text-transform: uppercase;
-	margin-bottom: 10px;
-	font-weight: normal;
+  	color: #999;
+  	font-size: 10px;
+  	text-transform: uppercase;
+  	margin-bottom: 10px;
+  	font-weight: normal;
 	}
 	.clear, .showall {
-	clear: both;
+  	clear: both;
 	}
 
 /* MAIN STRUCTURE */
 	div#content {
-	width: 800px;
-	background: #fff;
-	clear: both;
-	margin: 0 auto;
-	position: relative;
+  	width: 800px;
+  	background: #fff;
+  	clear: both;
+  	margin: 0 auto;
+  	position: relative;
 	}
 	div#content div {
-	padding: 30px 40px 30px 80px;
+  	padding: 30px 40px 30px 80px;
 	}
 	div#content div div {
-	padding: 0;
-	margin: 0;
+  	padding: 0;
+  	margin: 0;
 	}
 
 /* EFFECTS */
 	.shadow {
-	-moz-box-shadow: 0px 0px 30px #ccc;
-	-webkit-box-shadow: 0px 0px 30px #ccc;
-	box-shadow: 0px 0px 30px #ccc;
-	/* For IE 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color='#cccccc')";
-	/* For IE 5.5 - 7 */
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color='#cccccc');
+  	-moz-box-shadow: 0px 0px 30px #ccc;
+  	-webkit-box-shadow: 0px 0px 30px #ccc;
+  	box-shadow: 0px 0px 30px #ccc;
+  	/* For IE 8 */
+  	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color='#cccccc')";
+  	/* For IE 5.5 - 7 */
+  	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color='#cccccc');
 	}
 	.rounded {
     -moz-border-radius: 3px;
@@ -105,22 +105,22 @@
 
 /* TOP */
 	div#content div#top {
-	padding-top: 40px;
+	  padding-top: 40px;
 	}
 	div#top h1 {
-	float: left;
-	margin: 0 0 30px 0;
+  	float: left;
+  	margin: 0 0 30px 0;
 	}
 	div#top a {
-	float: right;
-	margin: 0 0 30px 0;
+  	float: right;
+  	margin: 0 0 30px 0;
 	}
 		
 /* SHORTCUTS */
 	div#content div#shortcuts {
-	background: #fdfdfd;
-	clear: both;
-	color: #ccc;
+  	background: #fdfdfd;
+  	clear: both;
+  	color: #ccc;
 	}
 
 /* TOOLBAR */
@@ -136,69 +136,85 @@
 		z-index: 1;
 	}
 	a.logo {
-	clear: both;
-	width: 200px;
-	padding: 20px;
-	margin: 20px 0;
+  	clear: both;
+  	width: 200px;
+  	padding: 20px;
+  	margin: 20px 0;
 	}
 	a.navi {
-	font-size: 16px;
-	font-weight: bold;
-	margin: 10px 0 10px 20px;
-	display: block;
-	width: 140px;
-	text-align: center;
-	text-transform: none;
+  	font-size: 16px;
+  	font-weight: bold;
+  	margin: 10px 0 10px 20px;
+  	display: block;
+  	width: 140px;
+  	text-align: center;
+  	text-transform: none;
 	}
 	div#content div#toolbar hr {
-	width: 200px;
-	margin: 20px 0;
-	padding: 0;
+  	width: 200px;
+  	margin: 20px 0;
+  	padding: 0;
 	}
 	div#toolbar p {
-	color: #91CED2;
-	margin-bottom: 15px;
+  	color: #91CED2;
+  	margin-bottom: 15px;
 	}
 
 /* HEADER */
 	div#header {
-	width: 800px;
-	margin: 0 auto;
-	font-size: 11px;
+  	width: 800px;
+  	margin: 0 auto;
+  	font-size: 11px;
 	}
 	div#header p.breadcrumb {
-	color: #999;
-	width: 400px;
-	float: left;
-	padding: 10px 0 10px 80px;
+  	color: #999;
+  	width: 400px;
+  	float: left;
+  	padding: 10px 0 10px 80px;
 	}
 	div#header p.breadcrumb a {
-	padding: 5px;
+  	padding: 5px;
 	}
 	ul#profile {
-	background: #333;
-	float: right;
-	padding: 5px 10px 5px 20px;
-	margin-top: 10px;
-	-moz-border-radius: 3px 3px 0 0;
-    -webkit-border-radius: 3px 3px 0 0;
-    -khtml-border-radius: 3px 3px 0 0;
-    border-radius: 3px 3px 0 0;
+  	background: #333;
+  	float: right;
+  	padding: 5px 10px 5px 20px;
+  	margin-top: 10px;
+  	-moz-border-radius: 3px 3px 0 0;
+      -webkit-border-radius: 3px 3px 0 0;
+      -khtml-border-radius: 3px 3px 0 0;
+      border-radius: 3px 3px 0 0;
 	}
 	ul#profile li {
-	float: left;
-	margin: 0 10px 0 0;
-	color: #ccc;
+  	float: left;
+  	margin: 0 10px 0 0;
+  	color: #ccc;
 	}
 	div#header hr {
-	border: 0;
-	height: 5px;
-	width: 800px;
-	clear: both;
-	background: #333;
-	margin: 0;
-	padding: 0;
+  	border: 0;
+  	height: 5px;
+  	width: 800px;
+  	clear: both;
+  	background: #333;
+  	margin: 0;
+  	padding: 0;
 	}
+	
+/* FOOTER */
+  div#footer {
+    width: 800px;
+  	margin: 0 auto;
+  	font-size: 11px;
+  }
+	div#footer div {
+  	padding: 30px 40px 30px 80px;	  
+	}
+
+	div#footer div div {
+	  padding: 0;
+	  margin: 0;
+  }
+		
 	
 /* RESTAURANT LISTS */
 
@@ -213,22 +229,22 @@
 	
 /* TAG CLOUD */
 	div#tag-cloud ul {
-	margin-bottom: 30px;
+  	margin-bottom: 30px;
 	}
 	div#tag-cloud ul li {
-	float: left;
-	margin: 0 5px 5px 0;
-	color: #999;
-	padding: 3px 7px;
-	background: #f4fafa;
-	-moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -khtml-border-radius: 3px;
-    border-radius: 3px;
+  	float: left;
+  	margin: 0 5px 5px 0;
+  	color: #999;
+  	padding: 3px 7px;
+  	background: #f4fafa;
+  	-moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -khtml-border-radius: 3px;
+      border-radius: 3px;
 	}
 	div#tag-cloud p.showall {
-	color: #999;
-	padding: 10px 0 0 0;
+  	color: #999;
+  	padding: 10px 0 0 0;
 	}
 	
 	/* SCAFFOLDS */
