@@ -9,6 +9,13 @@ fi:
   register: "Rekisteröidy"
   login: "Käyttäjänimi tai e-mail"
   password: "Salasana"
+  profile: "Profiili:"
+  help: "Apua:"  
+  edit_profile: "Muokkaa tietojasi ›"
+  faq: "Usein kysytyt kysymykset ›"
+  contact_veggie: "Ota yhteyttä Veggieen ›"
+  what_is_veggie: "Mikä Veggie on? ›"
+  info: "Tietoa:"
 
   # Restaurant
   restaurants_button: "Ravintolat ›"
@@ -23,6 +30,7 @@ fi:
   by_alphabetical_list: "Aakkosellisen hakemiston avulla"
   last_added: "Viimeksi lisätyt:"
   succesfully_created: "Ravintola lisättiin onnistuneesti."
+  search_button: "Etsi ›"
   
   #TODO: move all the above under namespace restaurants
   restaurants:

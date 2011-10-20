@@ -34,7 +34,3 @@
   #comments-notice
   
   = render :partial => "comments/form", :locals => {:restaurant => @restaurant, :comment => Comment.new}
-
-= link_to 'Edit', edit_restaurant_path(@restaurant)
-|
-= link_to 'Back', restaurants_path

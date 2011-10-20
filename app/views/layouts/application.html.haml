@@ -43,4 +43,27 @@
       =t :your_are_here
       =render_breadcrumbs
     .search
-      search
+      = form_tag("/search", :method => "get") do 
+        = text_field_tag(:searchquery)
+        = submit_tag t(:search_button), :class => 'button'
+    #profile
+      %h6 
+        =t(:profile)
+      - if user_signed_in?
+        %a{:href => '#'}=t :edit_profile
+        %br
+        %a#logout
+          =link_to t(:logout), destroy_user_session_path, :method => :delete
+      - else
+        %a{:href => new_user_registration_path}=t :register
+    #help
+      %h6 
+        =t(:help)
+      %a{:href => '#'}=t :faq
+      %br
+      %a{:href => '#'}=t :contact_veggie
+      
+    #info
+      %h6 
+        =t(:info)
+      %a{:href => '#'}=t :what_is_veggie

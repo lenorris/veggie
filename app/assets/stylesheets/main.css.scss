@@ -223,15 +223,32 @@
     width: 800px;
   	margin: 0 auto;
   	font-size: 11px;
+  	padding: 30px 0px 140px 0px;	    	
   }
 	div#footer div {
-  	padding: 30px 40px 30px 80px;	  
+  	padding: 5px 40px 0px 80px;	  
 	}
-
-	div#footer div div {
-	  padding: 0;
-	  margin: 0;
-  }
+	div#footer .search {
+	  //visibility: hidden;
+	}  
+	div#footer #searchquery {
+	  width: 620px;	  
+	}  
+	div#footer #profile {
+	  width: 220px;	
+	  float: left;   	  
+	}  
+	div#footer #help {
+	  width: 220px;	 
+  	padding: 5px 20px 0px 0px;	 	   
+	  float: left;  
+	  height: 100%;
+	}  
+	div#footer #info {
+	  width: 200px;	 
+  	padding: 5px 20px 0px 0px;	 	   
+	  float: left;  
+	}    
 		
 	
 /* RESTAURANT LISTS */
