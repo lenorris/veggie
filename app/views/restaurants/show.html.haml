@@ -18,8 +18,8 @@
       
   .clear
 
-#map
-  = render :partial => 'map', :locals => { :lat => '60.167587391426764', :lng => '24.9375057220459', :restaurant => @restaurant }
+// What if there is no restaurants?
+#map= render :partial => 'restaurantmap', :locals => { :lat => @restaurant.branches.first.latitude, :lng => @restaurant.branches.first.longitude, :restaurant => @restaurant }
 
 #description.bottom-border
   %h2= t('activerecord.attributes.restaurant.info')

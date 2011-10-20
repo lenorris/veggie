@@ -4,6 +4,10 @@ class Restaurant < ActiveRecord::Base
   accepts_nested_attributes_for :branches
   has_many :comments, :dependent => :destroy
   before_save :add_protocol_to_website
+
+  def as_json(options={})
+    super(:include => :branches)
+  end
   
   private
   
