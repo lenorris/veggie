@@ -32,12 +32,13 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   
   # database_cleaner because selenium doesn't handle transactional fixtures
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
       
   config.before(:each) do
+    if Capybara.current_driver == :rack_test
+      DatabaseCleaner.strategy = :transaction
+    else
+      DatabaseCleaner.strategy = :truncation
+    end
     DatabaseCleaner.start
   end
        

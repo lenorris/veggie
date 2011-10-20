@@ -35,6 +35,7 @@ fi:
     add: "Lisää oma kommenttisi"
     thanks: "Kiitos kommentistasi."
     said: "sanoi"
+    login: "Sinun täytyy olla kirjautunut sisään voidaksesi kommentoida."
 
   breadcrumbs:
     controllers:

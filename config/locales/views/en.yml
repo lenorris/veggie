@@ -31,6 +31,7 @@ en:
     add: "Add your comment"
     thanks: "Thank you for commenting."
     said: "said"
+    login: "You have to login to be able to comment."
   
   restaurants:
     open: "Business hours:"

@@ -1,0 +1,5 @@
+= form_tag new_user_session_path, :class => "login-form" do
+
+  = text_field_tag 'user[login]', params[:login], :placeholder => t(:login)
+  = password_field_tag 'user[password]', params[:password], :placeholder => t(:password)
+  = submit_tag "Log in"

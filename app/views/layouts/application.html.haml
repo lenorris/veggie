@@ -28,11 +28,7 @@
           %a#logout
             =link_to t(:logout), destroy_user_session_path, :method => :delete
         - else
-          = form_tag new_user_session_path do
-
-            = text_field_tag 'user[login]', params[:login], :placeholder => t(:login)
-            = password_field_tag 'user[password]', params[:password], :placeholder => t(:password)
-            = submit_tag "Log in"
+          = render 'shared/login'
 
     %hr
 
