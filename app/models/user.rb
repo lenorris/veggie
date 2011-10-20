@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
             :presence => true,
             :uniqueness => true,
             :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+            
+  has_many :comments
 
 
   protected

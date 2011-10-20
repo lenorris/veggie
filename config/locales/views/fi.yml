@@ -30,6 +30,13 @@ fi:
     address: "Osoite:"
     contact_details: "Yhteystiedot:"
 
+  comments:
+    title: "Kommentit:"
+    add: "Lisää oma kommenttisi"
+    thanks: "Kiitos kommentistasi."
+    said: "sanoi"
+    login: "Sinun täytyy olla kirjautunut sisään voidaksesi kommentoida."
+
   breadcrumbs:
     controllers:
       restaurants: "Ravintolat"

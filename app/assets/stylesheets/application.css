@@ -6,6 +6,7 @@
  *= require reset
  *= require main
  *= require forms_and_errors
+ *= require comments
  *= require restaurants
  *= require_self
 */

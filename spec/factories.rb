@@ -4,7 +4,7 @@ FactoryGirl.define do
   
   factory :restaurant do
     name "Tony's deli"
-    info "Excellent italian restaurant." 
+    info "Excellent italian restaurant."
   end
   
   factory :branch do
@@ -16,8 +16,13 @@ FactoryGirl.define do
   factory :user do
     username "user"
     email "user@user.org"
-    password "userpass"
+    password "userpass12321321£@$£@532"
   end
 
+  factory :comment do
+    user
+    restaurant
+    body "Fine italian dining. I highly recommend this place."
+  end
   
 end

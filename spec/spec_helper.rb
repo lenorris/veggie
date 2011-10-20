@@ -29,7 +29,23 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
+  
+  # database_cleaner because selenium doesn't handle transactional fixtures
+      
+  config.before(:each) do
+    if Capybara.current_driver == :rack_test
+      DatabaseCleaner.strategy = :transaction
+    else
+      DatabaseCleaner.strategy = :truncation
+    end
+    DatabaseCleaner.start
+  end
+       
+  config.after(:each) do
+   DatabaseCleaner.clean
+  end
+  
 end
 
 def mock_google_api_response(results_size, status, lat, lng)
@@ -93,8 +109,17 @@ def mock_google_api_response(results_size, status, lat, lng)
           },
           "types" => [ "street_address" ]
         }
-        results << result
-      end
-      json_response = {"results" => results, "status" => status }.to_s.gsub("=>", ":")
-      return json_response
+      results << result
     end
+  json_response = {"results" => results, "status" => status }.to_s.gsub("=>", ":")
+  json_response
+end
+
+def mock_ability
+  @ability = Object.new
+  @ability.extend(CanCan::Ability)
+  @ability.can(:manage, :all)
+  @controller.stub!(:current_ability).and_return(@ability)
+end
+    
+    

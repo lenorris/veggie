@@ -2,12 +2,12 @@ class Restaurant < ActiveRecord::Base
   validates_presence_of :name, :info
   has_many :branches, :dependent => :destroy
   accepts_nested_attributes_for :branches
+  has_many :comments, :dependent => :destroy
+  before_save :add_protocol_to_website
 
   def as_json(options={})
     super(:include => :branches)
   end
-
-  before_save :add_protocol_to_website
   
   private
   

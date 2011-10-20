@@ -89,11 +89,7 @@ class RestaurantsController < ApplicationController
   private
   
   def find_restaurant
-    begin
-      @restaurant = Restaurant.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      redirect_to restaurants_path, :notice => "Restaurant with given ID wasn't found"
-    end
+    @restaurant = Restaurant.find(params[:id])
   end
   
 end

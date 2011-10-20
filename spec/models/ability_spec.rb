@@ -53,6 +53,21 @@ describe Ability do
       end
     end
     
+    context "comments" do
+      it "should be able to read comments" do
+        @ability.should be_able_to(:read, Comment.new)
+      end
+      it "should be able to create a comment" do
+        @ability.should be_able_to(:create, Comment.new)
+      end
+      it "should not be able to delete a comment" do
+        @ability.should_not be_able_to(:destroy, Comment.new)
+      end
+      it "should not be able to update a comment" do
+        @ability.should_not be_able_to(:update, Comment.new)
+      end
+    end
+    
   end
   
   describe "guests" do
@@ -93,6 +108,21 @@ describe Ability do
       end
       it "should not be able to destroy branch" do
         @ability.should_not be_able_to(:destroy, Branch.new)
+      end
+    end
+    
+    context "comments" do
+      it "should be able to read comments" do
+        @ability.should be_able_to(:read, Comment.new)
+      end
+      it "should not be able to create a comment" do
+        @ability.should_not be_able_to(:create, Comment.new)
+      end
+      it "should not be able to delete a comment" do
+        @ability.should_not be_able_to(:destroy, Comment.new)
+      end
+      it "should not be able to update a comment" do
+        @ability.should_not be_able_to(:update, Comment.new)
       end
     end
      
