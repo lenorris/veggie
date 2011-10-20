@@ -1,2 +1,2 @@
 rvm: 1.9.2
-script: "rake db:migrate && rake"
+script: "sh -e /etc/init.d/xvfb start && export DISPLAY=:99.0 && rake db:migrate && rake"
