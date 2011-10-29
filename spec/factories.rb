@@ -25,4 +25,9 @@ FactoryGirl.define do
     body "Fine italian dining. I highly recommend this place."
   end
   
+  factory :dish do
+    restaurant
+    name "Currytofu"
+  end
+  
 end
