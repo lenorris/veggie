@@ -68,6 +68,21 @@ describe Ability do
       end
     end
     
+    context "dishes" do
+      it "should be able to read dishes" do
+        @ability.should be_able_to(:read, Dish.new)
+      end
+      it "should be able to create dishes" do
+        @ability.should be_able_to(:create, Dish.new)
+      end
+      it "should not be able to delete dishes" do
+        @ability.should_not be_able_to(:destroy, Dish.new)
+      end
+      it "should be able to update dishes" do
+        @ability.should be_able_to(:update, Dish.new)
+      end
+    end
+    
   end
   
   describe "guests" do
@@ -125,7 +140,21 @@ describe Ability do
         @ability.should_not be_able_to(:update, Comment.new)
       end
     end
-     
+    
+    context "dishes" do
+      it "should be able to read comments" do
+        @ability.should be_able_to(:read, Dish.new)
+      end
+      it "should not be able to create a comment" do
+        @ability.should_not be_able_to(:create, Dish.new)
+      end
+      it "should not be able to delete a comment" do
+        @ability.should_not be_able_to(:destroy, Dish.new)
+      end
+      it "should not be able to update a comment" do
+        @ability.should_not be_able_to(:update, Dish.new)
+      end
+    end
   end
   
 end
