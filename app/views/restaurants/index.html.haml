@@ -28,72 +28,75 @@
     %a{:href => "#"}=t :by_reviews
     &bull;
     %a{:href => "#"}=t :by_alphabetical_list
+
   
 #map
   - unless @restaurants.empty?
     =render :partial => 'restaurantsmap', :locals => { :lat => '60.167587391426764', :lng => '24.9375057220459' }    
 
+/
+  #tag-cloud
+    %h2=t('restaurants.tags') 
+    %ul
+      %li
+        %a{:href => "#"}lorem ipsum
+        (30)
+      %li
+        %a{:href => "#"}dolor
+        (30)
+      %li
+        %a{:href => "#"}sit amen
+        (30)
+      %li
+        %a{:href => "#"}consectetur
+        (30)
+      %li
+        %a{:href => "#"}elit
+        (30)
 
-#tag-cloud
-  %h2 Tagit:
-  %ul
-    %li
-      %a{:href => "#"}lorem ipsum
-      (30)
-    %li
-      %a{:href => "#"}dolor
-      (30)
-    %li
-      %a{:href => "#"}sit amen
-      (30)
-    %li
-      %a{:href => "#"}consectetur
-      (30)
-    %li
-      %a{:href => "#"}elit
-      (30)
+    %p.showall
+      Ja 51 lis&auml;&auml;.
+      %a{:href => "#"}N&auml;yt&auml; kaikki &raquo;
 
-  %p.showall
-    Ja 51 lis&auml;&auml;.
-    %a{:href => "#"}N&auml;yt&auml; kaikki &raquo;
+.five-restaurant-list
 
+  %h2=t('restaurants.last_added')        
+  %hr
+  - last_added = Restaurant.find(:all, :order => 'created_at', :limit => 5)
 
-    %div
-      .five-restaurant-list
-        %h2=t :last_added
-        %ul
-          %li
-            %a{:href => "#" }Ravintolan nimi lorem ipsum
-            %p.stars 4.8
-            %p.hearts 21
-          %li
-            %a{:href => "#" }Ravintolan nimi lorem ipsum
-            %p.stars 4.8
-            %p.hearts 21
+  - last_added.each do |rest|
+    =render :partial => 'restaurantsshort', :locals => { :rest => rest }    
 
+<hr>
 
-%div
-  %h1 Listing restaurants
+.five-restaurant-list
+  %h2=t('restaurants.most_commented')
+  %hr  
+  - most_commented = @restaurants.sort!{|a,b| b.comments.count <=> a.comments.count}
+  - most_commented.each do |rest|
+    =render :partial => 'restaurantsshort', :locals => { :rest => rest }    
+  
+/
+  %div
+    %h1 Listing restaurants
 
-  %table
-    %tr
-      %th Name
-      %th Website
-      %th Info
-      %th
-      %th
-      %th
-    - @restaurants.each do |restaurant|
+    %table
       %tr
-        %td= restaurant.name
-        %td= restaurant.website
-        %td= restaurant.info
-        %td= link_to 'Show', restaurant
-        %td= link_to 'Edit', edit_restaurant_path(restaurant)
-        %td= link_to 'Destroy', restaurant, confirm: 'Are you sure?', method: :delete
+        %th Name
+        %th Website
+        %th Info
+        %th
+        %th
+        %th
+      - @restaurants.each do |restaurant|
+        %tr
+          %td= restaurant.name
+          %td= restaurant.website
+          %td= restaurant.info
+          %td= link_to 'Show', restaurant
+          %td= link_to 'Edit', edit_restaurant_path(restaurant)
+          %td= link_to 'Destroy', restaurant, confirm: 'Are you sure?', method: :delete
 
-  %br
+    %br
 
-  = link_to 'New Restaurant', new_restaurant_path
-  = t :hello
-  Ravintolat &rsaquo;
+    = link_to 'New Restaurant', new_restaurant_path

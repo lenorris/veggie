@@ -7,7 +7,34 @@
   .contact-details {
     float:left;
     width:33%;
-  }
+  }	
 }
 
+html body div#content.content div.five-restaurant-list {
+  height: 200px;
+}
 
+html body div#content.content div.five-restaurant-list div.restaurant_short {
+  width: 200px;
+  float:left;
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+  
+}  
+
+li.address {
+  color: #999999;
+  font-weight: normal;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-size: 11px;  
+}
+
+.five-restaurant-list hr {
+  color: #eee;
+  height: 1px;
+  background-color: #eee;
+  width: 100%;   
+  margin-bottom: 12px;  
+}

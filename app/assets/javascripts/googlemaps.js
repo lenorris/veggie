@@ -1,6 +1,7 @@
 function initmap(lat, lng, zoom) {
   var latlng = new google.maps.LatLng(lat, lng);
   var myOptions = {
+    scrollwheel: false,
     zoom: zoom,
     center: latlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP

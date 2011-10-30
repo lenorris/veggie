@@ -28,7 +28,6 @@ fi:
   by_tags: "Tagien avulla"
   by_reviews: "Arvostuksen tai ajankohtaisuuden mukaan"
   by_alphabetical_list: "Aakkosellisen hakemiston avulla"
-  last_added: "Viimeksi lisätyt:"
   succesfully_created: "Ravintola lisättiin onnistuneesti."
   search_button: "Etsi ›"
   
@@ -37,7 +36,12 @@ fi:
     open: "Avoinna:"
     address: "Osoite:"
     contact_details: "Yhteystiedot:"
-
+    tags: "Tagit:"
+    show_all: "Näytä kaikki ›"
+    most_commented: "Eniten kommentoidut:"
+    last_added: "Viimeksi lisätyt:"    
+    comments: "Kommentit"
+    
   comments:
     title: "Kommentit:"
     add: "Lisää oma kommenttisi"

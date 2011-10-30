@@ -23,7 +23,6 @@ en:
   by_tags: "By tags"
   by_reviews: "By reviews"
   by_alphabetical_list: "By alphabetical list"
-  last_added: "Last added:"
   succesfully_created: "Restaurant was succesfully added."
     
   comments:
@@ -37,7 +36,12 @@ en:
     open: "Business hours:"
     address: "Address:"
     contact_details: "Contact:"
-  
+    tags: "Tags:"
+    show_all: "Show all ›"
+    most_commented: "Most commented:"    
+    last_added: "Last added:"        
+    comments: "Comments"
+        
   breadcrumbs:
     controllers:
       restaurants: "Restaurants"

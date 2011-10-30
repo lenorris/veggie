@@ -1,0 +1,19 @@
+.restaurant_short
+  %ul
+    %li
+      = link_to rest.name, rest
+    %li.address
+      - if (rest.branches.count == 1)
+        = rest.branches[0].street_address + ", " + rest.branches[0].city
+
+      - elsif (rest.branches.count > 1)
+        / "..." shows all the branches
+        = rest.branches[0].street_address + ", " + rest.branches[0].city + ", .. "
+    %li
+      - if (rest.info.length > 160)
+        = rest.info[0..160] + "..."
+      - else
+        = rest.info
+    %li
+      =image_tag("comments.png", :alt => t('restaurants.comments'))
+      = rest.comments.count

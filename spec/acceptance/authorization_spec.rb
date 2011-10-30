@@ -4,7 +4,8 @@ describe 'authorization', :type => :request  do
   
   it "should redirect to root page if user doesn't have the correct rights" do
     visit restaurants_path
-    click_link 'New Restaurant'
+    #click_link 'New Restaurant'
+    click_link 'restaurants/new'
     current_path.should == root_path
     page.should have_selector('#alert')
   end
