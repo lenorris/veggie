@@ -4,7 +4,7 @@ Veggie::Application.routes.draw do
 
   resources :restaurants do
     resources :comments, :only => [:create]
-    resources :dishes, :only => [:create, :update]
+    resources :dishes, :only => [:new, :create, :update]
   end
 #  resources :users
 
