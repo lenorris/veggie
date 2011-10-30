@@ -38,6 +38,14 @@ en:
     address: "Address:"
     contact_details: "Contact:"
   
+  dishes:
+    title: "Dishes:"
+    missing: "Is your favorite dish missing?"
+    add: "Add a dish"
+    thanks: "Thank you for adding a dish. If you want you can add another one."
+    login: "You have to login to be able to add dishes."
+
+  
   breadcrumbs:
     controllers:
       restaurants: "Restaurants"

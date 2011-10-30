@@ -1,12 +1,17 @@
 class DishesController < ApplicationController
   respond_to :js
   before_filter :find_restaurant
-  load_and_authorize_resource :except => [:create]
+  load_and_authorize_resource :except => [:create, :new]
   
   
   def new
-    @dish = Dish.new
-    respond_with @dish
+    begin
+      authorize! :create, @dish
+      @dish = Dish.new
+      respond_with @dish
+    rescue CanCan::AccessDenied
+      render action: "unauthorized"
+    end
   end
   
   def create

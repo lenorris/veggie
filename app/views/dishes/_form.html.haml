@@ -1,0 +1,32 @@
+= form_for([restaurant, dish], :remote => true) do |f|
+  - if dish.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(dish.errors.count, "error")
+        prohibited this dish from being saved:
+
+      %ul
+        - dish.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    %br
+    = f.text_field :name
+
+  .field
+    = f.label :description
+    %br
+    = f.text_field :description
+  .field
+    = f.label :notice
+    %br
+    = f.text_field :notice
+    
+  .field
+    = f.label :price
+    %br
+    = f.text_field :price
+    
+  .actions
+    = f.submit
