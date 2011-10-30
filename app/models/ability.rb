@@ -5,12 +5,12 @@ class Ability
     
     # Abilities for logged in users (user is not nil):
     if user
-      can [:create, :read, :update], [Restaurant, Branch]
-      can [:create, :read], Comment
+      can [:create, :read, :update], [Restaurant, Branch, Dish]
+      can [:create, :read], [Comment]
       
     #abilities for guests
     else
-      can :read, [Restaurant, Branch, Comment]
+      can :read, [Restaurant, Branch, Comment, Dish]
       can :create, User
     end
   end

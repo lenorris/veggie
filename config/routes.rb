@@ -3,7 +3,8 @@ Veggie::Application.routes.draw do
   devise_for :users
 
   resources :restaurants do
-    resources :comments, :only => [:index, :create]
+    resources :comments, :only => [:create]
+    resources :dishes, :only => [:new, :create, :update]
   end
 #  resources :users
 

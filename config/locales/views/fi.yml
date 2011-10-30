@@ -10,7 +10,7 @@ fi:
   login: "Käyttäjänimi tai e-mail"
   password: "Salasana"
   profile: "Profiili:"
-  help: "Apua:"  
+  help: "Apua:"
   edit_profile: "Muokkaa tietojasi ›"
   faq: "Usein kysytyt kysymykset ›"
   contact_veggie: "Ota yhteyttä Veggieen ›"
@@ -48,6 +48,13 @@ fi:
     thanks: "Kiitos kommentistasi."
     said: "sanoi"
     login: "Sinun täytyy olla kirjautunut sisään voidaksesi kommentoida."
+    
+  dishes:
+    title: "Annokset:"
+    missing: "Puuttuuko listalta lempiannoksesi?"
+    add: "Lisää annos"
+    thanks: "Kiitos lisäyksestä. Voit halutessasi lisätä myös lisää annoksia."
+    login: "Sinun täytyy olla kirjautunut sisään voidaksesi lisätä annoksia."
 
   breadcrumbs:
     controllers:

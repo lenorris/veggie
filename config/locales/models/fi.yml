@@ -4,6 +4,7 @@ fi:
       restaurant: "ravintola"
       branch: "toimipiste"
       comment: "kommentti"
+      dish: "annos"
     attributes:
       restaurant:
         name: "Nimi"
@@ -17,6 +18,11 @@ fi:
         email:  "Sähköposti"
       comment:
         body: "Kommentti"
+      dish:
+        name: "Nimi"
+        description: "Kuvaus"
+        notice: "Huomautus"
+        price: "Hinta"
         
   # for form builder helper to customize submit buttons
   helpers:

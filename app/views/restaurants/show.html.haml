@@ -25,6 +25,16 @@
   %h2= t('activerecord.attributes.restaurant.info')
   %p= simple_format @restaurant.info
 
+#dishes-block.bottom-border
+  #dishes
+    %h2=t('dishes.title')
+    =render @restaurant.dishes
+    
+  %p=t('dishes.missing')
+  #dishes-notice
+  =link_to t('dishes.add'), new_restaurant_dish_path(@restaurant), :remote => true
+  #dish-form
+    
 
 #comments-block
   #comments

@@ -4,6 +4,7 @@ en:
       restaurant: "restaurant"
       branch: "branch"
       comment: "comment"
+      dish: "dish"
     attributes:
       restaurant:
         name: "Name"
@@ -17,6 +18,11 @@ en:
         email:  "Email"
       comment:
         body: "Body"
+      dish:
+        name: "Name"
+        description: "Description"
+        notice: "Notice"
+        price: "Price"
         
   # for form builder helper to customize submit buttons
   helpers:
