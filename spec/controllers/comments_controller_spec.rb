@@ -25,6 +25,12 @@ describe CommentsController do
         xhr :post, :create, valid_params.merge({:restaurant_id => 6666})
         response.should redirect_to(root_path)
       end
+      
+      it "should respond with invalid comment object if it didn't pass validations" do
+        xhr :post, :create, valid_params.merge({:comment => {:body => nil }})
+        assigns(:comment).errors.should_not be_empty
+      end
+      
     end
     
   end
