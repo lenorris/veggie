@@ -15,11 +15,7 @@ describe DishesController do
   describe "POST create" do
     
     context "with valid params" do
-      
-      it "response should be success" do
-        xhr :post, :create, valid_params
-        response.should be_success
-      end
+            
       it "creates a new dish" do
         expect {xhr :post, :create, valid_params}.to change(@restaurant.dishes, :count).by(1)
       end
@@ -31,10 +27,11 @@ describe DishesController do
         response.should redirect_to(root_path)
       end
       
-      it "should respond with error if the dish has no name" do
+      it "should respond with invalid object if the dish has no name" do
         xhr :post, :create, valid_params.merge({:dish => {:name => nil }})
-        response.status.should == 422 # :unprocessable_entity
+        assigns(:dish).errors.should_not be_empty
       end
+            
     end
   end
   
@@ -50,9 +47,8 @@ describe DishesController do
         expect do
           xhr :put, :update, valid_params.merge({:id => @dish.id, :dish => { :name => nil}})
         end.to_not change{@dish.name}
-        
-        
       end
+      
     end
     
     context "with invalid params" do
@@ -62,6 +58,7 @@ describe DishesController do
           xhr :put, :update, valid_params.merge({:id => @dish.id, :dish => { :name => nil}})
         end.to_not change{@dish.name}
       end
+
       
       it "should return an invalid object" do
         xhr :put, :update, valid_params.merge({:id => @dish.id, :dish => { :name => nil}})
