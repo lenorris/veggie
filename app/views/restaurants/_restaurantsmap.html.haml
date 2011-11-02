@@ -9,8 +9,8 @@
       // Init the map with centering on lat, lng and zoomlevel 
       map = initmap(#{lat}, #{lng}, 13);
 
-      // Add all the branches of all restaurants as a markers on the map         
-      $.getJSON($(location).attr('href') + '.json', function(restaurants) {
+      // Add all the branches of all restaurants as a markers on the map               
+      $.getJSON('restaurants.json', function(restaurants) {
         $.each(restaurants, function(key, restaurant) {
                       
           $.each(restaurant.branches, function(key, branch) {
