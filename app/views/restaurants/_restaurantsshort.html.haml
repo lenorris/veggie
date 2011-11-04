@@ -11,7 +11,7 @@
         = rest.branches[0].street_address + ", " + rest.branches[0].city + ", .. "
     %li
       - if (rest.info.length > 160)
-        = rest.info[0..160] + "..."
+        = rest.info[0..100] + "..."
       - else
         = rest.info
     %li

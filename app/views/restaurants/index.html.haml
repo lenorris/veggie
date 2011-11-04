@@ -27,12 +27,12 @@
     &bull;
     %a{:href => "#"}=t :by_reviews
     &bull;
-    %a{:href => "#"}=t :by_alphabetical_list
+    %a{:href => "#abc"}=t :by_alphabetical_list
 
   
-#map
-  - unless @restaurants.empty?
-    =render :partial => 'restaurantsmap', :locals => { :lat => '60.167587391426764', :lng => '24.9375057220459' }    
+/#map
+/  - unless @restaurants.empty?
+/    =render :partial => 'restaurantsmap', :locals => { :lat => '60.167587391426764', :lng => '24.9375057220459' }    
 
 /
   #tag-cloud
@@ -59,7 +59,6 @@
       %a{:href => "#"}N&auml;yt&auml; kaikki &raquo;
 
 .five-restaurant-list
-
   %h2=t('restaurants.last_added')        
   %hr
   - last_added = Restaurant.find(:all, :order => 'created_at', :limit => 5)
@@ -67,7 +66,7 @@
   - last_added.each do |rest|
     =render :partial => 'restaurantsshort', :locals => { :rest => rest }    
 
-<hr>
+%hr
 
 .five-restaurant-list
   %h2=t('restaurants.most_commented')
@@ -75,7 +74,46 @@
   - most_commented = @restaurants.sort!{|a,b| b.comments.count <=> a.comments.count}
   - most_commented.each do |rest|
     =render :partial => 'restaurantsshort', :locals => { :rest => rest }    
+
+%hr
   
+.restaurants-alphabetically
+  %h2=t('restaurants.browse_alphabetically')
+  
+  - previous_letter = 'A'
+  - letter_count = 1
+  - restaurants_abc = @restaurants.sort! { |a,b| a.name.downcase <=> b.name.downcase }
+  - restaurants_abc.each do |restaurant|
+    - if previous_letter != restaurant.name[0]
+      %hr
+      .restaurant-letter
+        <span class="abc_letter"> 
+        =previous_letter
+        </span> <span class="abc_restaurant_count">
+        = letter_count 
+        - if letter_count == 1
+          ravintola</a>
+        - else
+          ravintolaa</a>  
+        =image_tag("arrow_right.png", :class => "arrow")
+      - letter_count = 1
+    - else
+      - letter_count = letter_count + 1
+        
+    - previous_letter = restaurant.name[0]
+
+  %hr
+  .restaurant-letter
+    <span class="abc_letter"> 
+    =previous_letter
+    </span> <span class="abc_restaurant_count">
+    = letter_count 
+    - if letter_count == 1
+      ravintola</a>
+    - else
+      ravintolaa</a>  
+    =image_tag("arrow_right.png", :class => "arrow")
+    
 /
   %div
     %h1 Listing restaurants

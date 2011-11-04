@@ -11,16 +11,15 @@
 }
 
 html body div#content.content div.five-restaurant-list {
-  height: 200px;
+  overflow: auto;
 }
 
 html body div#content.content div.five-restaurant-list div.restaurant_short {
   width: 200px;
   float:left;
-  display: inline;
+  //display: inline;
   list-style-type: none;
   padding-right: 20px;
-  
 }  
 
 li.address {
@@ -31,10 +30,42 @@ li.address {
   font-size: 11px;  
 }
 
-.five-restaurant-list hr {
+.five-restaurant-list hr, .restaurants-alphabetically hr {
   color: #eee;
   height: 1px;
   background-color: #eee;
   width: 100%;   
   margin-bottom: 12px;  
 }
+
+div.restaurants-alphabetically {
+
+}
+
+div.restaurants-alphabetically {
+  
+}
+
+span.abc_letter {
+  color: #EB4600;
+  padding-right: 20px;
+  font-weight: bold;
+}
+
+span.abc_restaurant_count {
+  color: #999999;
+  font-weight: normal;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-size: 11px;
+}
+
+img.arrow {
+  float: right;
+  vertical-align: bottom;  
+}
+
+.restaurant-letter {
+
+}
+

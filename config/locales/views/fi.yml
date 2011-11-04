@@ -41,6 +41,7 @@ fi:
     most_commented: "Eniten kommentoidut:"
     last_added: "Viimeksi lisätyt:"    
     comments: "Kommentit"
+    browse_alphabetically: "Selaa ravintoloita aakkosittain:"
     
   comments:
     title: "Kommentit:"

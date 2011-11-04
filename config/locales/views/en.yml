@@ -41,7 +41,8 @@ en:
     most_commented: "Most commented:"    
     last_added: "Last added:"        
     comments: "Comments"
-  
+    browse_alphabetically: "Alphabetical list of the restaurants:"
+      
   dishes:
     title: "Dishes:"
     missing: "Is your favorite dish missing?"
