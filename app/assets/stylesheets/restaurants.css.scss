@@ -22,6 +22,15 @@ html body div#content.content div.five-restaurant-list div.restaurant_short {
   padding-right: 20px;
 }  
 
+div.restaurant_short {
+  width: 200px;
+  float:left;
+  //display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}  
+
+
 li.address {
   color: #999999;
   font-weight: normal;
@@ -36,14 +45,11 @@ li.address {
   background-color: #eee;
   width: 100%;   
   margin-bottom: 12px;  
+  overflow: auto;
 }
 
 div.restaurants-alphabetically {
-
-}
-
-div.restaurants-alphabetically {
-  
+  overflow: auto;  
 }
 
 span.abc_letter {
@@ -65,7 +71,23 @@ img.arrow {
   vertical-align: bottom;  
 }
 
-.restaurant-letter {
+html body div#content.content div.restaurants-alphabetically div.restaurant-letter {
+  padding-bottom: 10px;
+  cursor: pointer;
+}
 
+.full_list {
+  display: none;
+}
+
+.abc_active {
+  //background-color: #EB4600;
+  //opacity: 0.9;
+}
+
+#TEST {
+  border: 2px;
+  background-color: #ff0000;
+  width: 20px;
 }
 

@@ -42,6 +42,9 @@ en:
     last_added: "Last added:"        
     comments: "Comments"
     browse_alphabetically: "Alphabetical list of the restaurants:"
+    restaurant: "restaurant"
+    restaurants: "restaurants"
+    
       
   dishes:
     title: "Dishes:"

@@ -42,7 +42,9 @@ fi:
     last_added: "Viimeksi lisätyt:"    
     comments: "Kommentit"
     browse_alphabetically: "Selaa ravintoloita aakkosittain:"
-    
+    restaurant: "ravintola"
+    restaurants: "ravintolaa"
+        
   comments:
     title: "Kommentit:"
     add: "Lisää oma kommenttisi"

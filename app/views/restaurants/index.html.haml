@@ -80,39 +80,31 @@
 .restaurants-alphabetically
   %h2=t('restaurants.browse_alphabetically')
   
-  - previous_letter = 'A'
-  - letter_count = 1
+  - previous_letter = ''
   - restaurants_abc = @restaurants.sort! { |a,b| a.name.downcase <=> b.name.downcase }
   - restaurants_abc.each do |restaurant|
     - if previous_letter != restaurant.name[0]
       %hr
       .restaurant-letter
         <span class="abc_letter"> 
-        =previous_letter
+        =restaurant.name[0]
         </span> <span class="abc_restaurant_count">
-        = letter_count 
+        - letter_count = Restaurant.where("name LIKE ?", restaurant.name[0] + "%").count
+        = letter_count
         - if letter_count == 1
-          ravintola</a>
+          =t('restaurants.restaurant')
+          </a>
         - else
-          ravintolaa</a>  
+          =t('restaurants.restaurants')
+          </a>
         =image_tag("arrow_right.png", :class => "arrow")
-      - letter_count = 1
     - else
-      - letter_count = letter_count + 1
         
     - previous_letter = restaurant.name[0]
 
-  %hr
-  .restaurant-letter
-    <span class="abc_letter"> 
-    =previous_letter
-    </span> <span class="abc_restaurant_count">
-    = letter_count 
-    - if letter_count == 1
-      ravintola</a>
-    - else
-      ravintolaa</a>  
-    =image_tag("arrow_right.png", :class => "arrow")
+    .full_list
+      =render :partial => 'restaurantsshort', :locals => { :rest => restaurant }    
+      
     
 /
   %div
