@@ -6,10 +6,10 @@ $ ->
   
   $('.restaurant-letter').toggle ->
     $(this).nextUntil(".restaurant-letter", ".full_list").show();
-    $(this).find('.arrow').attr("src", 'assets/arrow_down.png');
+    $(this).find('.arrow').attr("src", '/assets/arrow_down.png');
   , ->
     $(this).nextUntil(".restaurant-letter", ".full_list").hide();
-    $(this).find('.arrow').attr("src", 'assets/arrow_right.png');    
+    $(this).find('.arrow').attr("src", '/assets/arrow_right.png');    
     
   $('.restaurant-letter').mouseover( ->
     $(this).addClass('abc_active');

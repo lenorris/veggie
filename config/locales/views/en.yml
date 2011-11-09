@@ -11,7 +11,10 @@ en:
   register: "Register"
   login: "Username or email"
   password: "Password"
-
+  what_is_veggie: "What Veggie is?"
+  the_register: "The Register"
+  faq: "Frequently Asked Questions"
+    
   # Restaurant
   restaurants_button: "Restaurants ›"
   search_from_veggie: "Search Veggie"

@@ -12,10 +12,11 @@ fi:
   profile: "Profiili:"
   help: "Apua:"
   edit_profile: "Muokkaa tietojasi ›"
-  faq: "Usein kysytyt kysymykset ›"
+  faq: "Usein kysytyt kysymykset"
   contact_veggie: "Ota yhteyttä Veggieen ›"
-  what_is_veggie: "Mikä Veggie on? ›"
+  what_is_veggie: "Mikä Veggie on?"
   info: "Tietoa:"
+  the_register: "Rekisteriseloste"
 
   # Restaurant
   restaurants_button: "Ravintolat ›"

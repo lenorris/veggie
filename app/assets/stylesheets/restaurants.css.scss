@@ -48,6 +48,17 @@ li.address {
   overflow: auto;
 }
 
+#footer div.hr {
+  color: #c6cece;
+  height: 1px;
+  padding: 0px;
+  margin: 0px;
+  background-color: #c6cece;
+  width: 680px;
+  margin: 15px 0px 15px 80px;   
+    
+}
+
 div.restaurants-alphabetically {
   overflow: auto;  
 }
@@ -83,11 +94,5 @@ html body div#content.content div.restaurants-alphabetically div.restaurant-lett
 .abc_active {
   //background-color: #EB4600;
   //opacity: 0.9;
-}
-
-#TEST {
-  border: 2px;
-  background-color: #ff0000;
-  width: 20px;
 }
 
