@@ -10,7 +10,7 @@ class DishesController < ApplicationController
       @dish = Dish.new
       respond_with @dish
     rescue CanCan::AccessDenied
-      render :partial => 'shared/unauthorized', :locals =>
+      render :partial => 'shared/unauthorized_ajax', :locals =>
       {:error_message => t('dishes.login'), :append_to => '#dishes-notice'}
     end
   end

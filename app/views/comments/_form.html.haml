@@ -1,3 +1,6 @@
+- if cannot? :create, Restaurant
+  =render :partial => 'shared/unauthorized', :locals => {:error_message => t('comments.login')}
+  
 = form_for([restaurant, comment], :remote => true) do |f|
   %h3=t("comments.add")
 

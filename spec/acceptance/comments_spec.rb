@@ -32,10 +32,4 @@ describe 'comments', :type => :request  do
     Comment.count.should == 0
   end
   
-  it "should instruct the user to login if she is a guest", :js => true do
-    visit restaurant_path(@restaurant)
-    fill_in "comment_body", :with => @comment_body
-    page.find('#error_explanation').should have_content(I18n.t('comments.login'))
-  end
-  
 end
