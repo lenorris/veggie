@@ -61,10 +61,8 @@
 .five-restaurant-list
   %h2=t('restaurants.last_added')        
   %hr
-  - last_added = Restaurant.find(:all, :order => 'created_at', :limit => 5)
-
-  - last_added.each do |rest|
-    =render :partial => 'restaurantsshort', :locals => { :rest => rest }    
+  - @last_added.each do |rest|
+    =render :partial => 'restaurantsshort', :locals => { :rest => rest }
 
 %hr
 

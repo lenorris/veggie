@@ -3,17 +3,11 @@
     %li
       = link_to rest.name, rest
     %li.address
-      - if (rest.branches.count == 1)
+      - unless rest.branches.empty?
         = rest.branches[0].street_address + ", " + rest.branches[0].city
-
-      - elsif (rest.branches.count > 1)
-        / "..." shows all the branches
-        = rest.branches[0].street_address + ", " + rest.branches[0].city + ", .. "
+        =  ", .. " if rest.branches.count > 1
     %li
-      - if (rest.info.length > 160)
-        = rest.info[0..100] + "..."
-      - else
-        = rest.info
+      =truncate(rest.info, :length => 100, :omission => '...')
     %li
       =image_tag("comments.png", :alt => t('restaurants.comments'))
       = rest.comments.count

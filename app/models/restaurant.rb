@@ -5,6 +5,10 @@ class Restaurant < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_many :dishes
   before_save :add_protocol_to_website
+  
+  def self.last_n(n)
+    Restaurant.order('created_at DESC').limit(n)
+  end
 
   def as_json(options={})
     super(:include => :branches)

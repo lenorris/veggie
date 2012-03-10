@@ -7,6 +7,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
+    @last_added = Restaurant.last_n(5)
 
     respond_to do |format|
       format.html # index.html.erb
