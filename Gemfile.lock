@@ -44,6 +44,9 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
+    capybara-webkit (0.10.1)
+      capybara (>= 1.0.0, < 1.2)
+      json
     childprocess (0.2.2)
       ffi (~> 1.0.6)
     coffee-rails (3.1.0)
@@ -83,6 +86,7 @@ GEM
     jquery-rails (1.0.14)
       railties (~> 3.0)
       thor (~> 0.14)
+    json (1.6.5)
     json_pure (1.5.4)
       spruz (~> 0.2.8)
     launchy (2.0.5)
@@ -182,6 +186,7 @@ DEPENDENCIES
   breadcrumbs_on_rails
   cancan
   capybara
+  capybara-webkit
   coffee-rails (~> 3.1.0)
   database_cleaner
   devise

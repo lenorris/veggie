@@ -36,6 +36,7 @@ group :test, :development do
   gem 'rspec-rails', "~> 2.6"
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'sqlite3'
   gem 'database_cleaner'
 end

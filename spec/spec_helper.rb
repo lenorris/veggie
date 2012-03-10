@@ -31,6 +31,10 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = false
   
+  Capybara.javascript_driver = :webkit
+  Capybara.default_wait_time = 5
+
+  
   # database_cleaner because selenium doesn't handle transactional fixtures
       
   config.before(:each) do

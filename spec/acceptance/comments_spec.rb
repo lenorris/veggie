@@ -19,7 +19,7 @@ describe 'comments', :type => :request  do
     page.all("#comments .comment").size.should == comment_count + 1
     page.all('#comments .comment').last.should have_content(@comment_body)
     page.find('#notice').should have_content(I18n.t('comments.thanks'))
-    page.should have_xpath("//form[@id='new_comment' and @style='display: none;']") # should hide the form
+    page.find('#new_comment').should_not be_visible # should hide the form
   end
   
   it 'should show errors and not create a comment if body is empty', :js => true do
