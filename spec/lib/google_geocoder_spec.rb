@@ -23,7 +23,7 @@ describe Geocoder::GoogleGeocoder do
     end
   end
     
-  context "when the response is ok" do
+  context "response is ok" do
     before(:each) do
       Net::HTTP.stub(:get).and_return(mock_google_api_response(1, @responses[:ok], @expected_lat, @expected_lng))
       @lat, @lng = @geocoder.geocode(@street_address, @city, @country, @postal_code)
@@ -38,18 +38,19 @@ describe Geocoder::GoogleGeocoder do
     end
   end
   
-  context "when response is not ok" do
+  context "response is not ok" do
     before(:each) do
       @geocode = lambda { @geocoder.geocode(@street_address, @city, @country, @postal_code) }
     end
+    
     context "invalid JSON" do
       before(:each) do
         Net::HTTP.stub(:get).and_return('trololoo')
       end
-      
       it 'throws an GeocodingException' do
         expect(@geocode).to raise_error(Geocoder::GeocoderError)
       end
     end
   end
+  
 end
