@@ -16,7 +16,7 @@ it 'should create a restaurant' do
     fill_in 'restaurant_info', :with => 'Great italian bistro!'
     fill_in 'restaurant[branches_attributes][0][street_address]', :with => 'Annankatu 32'
     fill_in 'restaurant[branches_attributes][0][city]', :with => 'Helsinki'
-    click_button 'Luo ravintola'
-    page.should have_content(I18n.t('succesfully_created'))
+    click_button  I18n.t('helpers.submit.create', :model => I18n.t('activerecord.models.restaurant'))
+    expect(page.find('#notice')).to have_content(I18n.t('succesfully_created'))
   end
 end
