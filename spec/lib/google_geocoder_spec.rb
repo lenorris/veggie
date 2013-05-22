@@ -37,4 +37,19 @@ describe Geocoder::GoogleGeocoder do
       expect(@lng).to be_within(0.01).of(@expected_lng)
     end
   end
+  
+  context "when response is not ok" do
+    before(:each) do
+      @geocode = lambda { @geocoder.geocode(@street_address, @city, @country, @postal_code) }
+    end
+    context "invalid JSON" do
+      before(:each) do
+        Net::HTTP.stub(:get).and_return('trololoo')
+      end
+      
+      it 'throws an GeocodingException' do
+        expect(@geocode).to raise_error(Geocoder::GeocoderError)
+      end
+    end
+  end
 end

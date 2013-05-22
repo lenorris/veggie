@@ -5,15 +5,23 @@ module Geocoder
 
     
     def geocode(street_address, city, country, postal_code)
-      response = JSON.parse(Net::HTTP.get uri(street_address, city, country))
+      response = parse_response(Net::HTTP.get uri(street_address, city, country))
       latlng = response['results'].first['geometry']['location']
       return latlng['lat'], latlng['lng']
     end
     
     private
-    def uri(street_address, city, country)
-      address = URI.encode("#{street_address},#{city}")
-      "#{BASE_URL}address=#{address}&region=#{country}&sensor=false"
-    end
+      def uri(street_address, city, country)
+        address = URI.encode("#{street_address},#{city}")
+        "#{BASE_URL}address=#{address}&region=#{country}&sensor=false"
+      end
+      
+      def parse_response(response)
+        begin
+          JSON.parse(response)
+        rescue JSON::ParserError => e
+          raise GeocoderError, e
+        end
+      end
   end
 end
