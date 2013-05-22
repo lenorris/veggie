@@ -13,7 +13,7 @@ module Geocoder
     private
       def uri(street_address, city, country)
         address = URI.encode("#{street_address},#{city}")
-        "#{BASE_URL}address=#{address}&region=#{country}&sensor=false"
+        URI.parse "#{BASE_URL}address=#{address}&region=#{country}&sensor=false"
       end
       
       def parse_response(response)

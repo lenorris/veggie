@@ -18,7 +18,8 @@ describe Geocoder::GoogleGeocoder do
   context "url" do
     it "is built correctly" do
       uri_encoded_address = URI.encode("Annankatu 29,Helsinki")
-      Net::HTTP.should_receive(:get).with(@base_uri + "address=#{uri_encoded_address}&region=#{URI.encode(@country)}&sensor=false").and_return(mock_google_api_response(1, @responses[:ok], @expected_lat, @expected_lng))
+      expected_uri = URI.parse(@base_uri + "address=#{uri_encoded_address}&region=#{URI.encode(@country)}&sensor=false")
+      Net::HTTP.should_receive(:get).with(expected_uri).and_return(mock_google_api_response(1, @responses[:ok], @expected_lat, @expected_lng))
       @geocoder.geocode(@street_address, @city, @country, @postal_code)
     end
   end
