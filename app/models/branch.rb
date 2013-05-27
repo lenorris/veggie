@@ -11,7 +11,8 @@ class Branch < ActiveRecord::Base
   
   def geocode
     begin
-      self.latitude, self.longitude = Geocoder.get_latlng("#{street_address}, #{city}")
+      #TODO: get country from config
+      self.latitude, self.longitude = Geocoder.get_latlng(street_address, city, "Finland")
     rescue Geocoder::GeocoderError => e
       logger.error e
     end

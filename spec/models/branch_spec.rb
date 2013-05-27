@@ -51,7 +51,7 @@ describe Branch do
     
     context "on create" do     
      it "should try to geocode branches address on create" do
-        Geocoder.should_receive(:get_latlng).with("Annankatu 29, Helsinki").and_return([@lat, @lng])
+        Geocoder.should_receive(:get_latlng).with("Annankatu 29", "Helsinki", "Finland").and_return([@lat, @lng])
         branch = FactoryGirl.create(:branch, :city => 'Helsinki', :street_address => 'Annankatu 29')
         branch.latitude.should == @lat
         branch.longitude.should == @lng    
@@ -72,14 +72,14 @@ describe Branch do
       end
       
       it "should try to geocode branch address on update if street address was changed" do
-        Geocoder.should_receive(:get_latlng).with("Change Street 123, Helsinki").and_return([@lat, @lng])
+        Geocoder.should_receive(:get_latlng).with("Change Street 123", "Helsinki", "Finland").and_return([@lat, @lng])
         @branch.update_attributes :street_address => "Change Street 123"
         @branch.latitude.should == @lat
         @branch.longitude.should == @lng
       end
       
       it "should try to geocode branch address on update if city was changed" do
-        Geocoder.should_receive(:get_latlng).with("Annankatu 29, Espoo").and_return([@lat, @lng])
+        Geocoder.should_receive(:get_latlng).with("Annankatu 29", "Espoo", "Finland").and_return([@lat, @lng])
         @branch.update_attributes :city => "Espoo"
         @branch.latitude.should == @lat
         @branch.longitude.should == @lng
