@@ -5,6 +5,7 @@ gem 'haml-rails'
 gem 'devise' #authentication
 gem 'cancan' #authorization
 gem 'breadcrumbs_on_rails'
+gem "rest-client", "~> 1.6.7"
 
 # Gems used only for assets and not required
 # in production environments by default.
