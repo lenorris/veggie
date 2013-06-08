@@ -1,10 +1,13 @@
+require 'http_client'
 module Geocoder
   class GoogleGeocoder
-    BASE_URL = "http://maps.googleapis.com/maps/api/geocode/json?"
+    BASE_URL = "http://maps.googleapis.com/maps/api/geocode/json"
     RESPONSES = {:ok => "OK", :empty => "ZERO_RESULTS", :over_limit => "OVER_QUERY_LIMIT", :denied => "REQUEST_DENIED", :invalid => "INVALID_REQUEST"}
 
     def geocode(street_address, city, country)
-      response = parse_response(Net::HTTP.get(uri(street_address, city, country)))
+      http_client = HttpClient.new
+      response = http_client.get(BASE_URL, params(street_address, city, country))
+      response = parse_response(response)
       status = response['status']
       validate_status(status)
       latlng = response['results'].first['geometry']['location']
@@ -12,9 +15,8 @@ module Geocoder
     end
     
     private
-      def uri(street_address, city, country)
-        address = URI.encode("#{street_address},#{city}")
-        URI.parse "#{BASE_URL}address=#{address}&region=#{country}&sensor=false"
+      def params(street_address, city, country)
+        {:address => "#{street_address},#{city}", :region => country, :sensor => false}
       end
       
       def parse_response(response)
