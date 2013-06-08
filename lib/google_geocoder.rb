@@ -5,11 +5,19 @@ module Geocoder
     BASE_URL = "http://maps.googleapis.com/maps/api/geocode/json"
 
     def geocode(street_address, city, country)
-      response = http_client.get(BASE_URL, params(street_address, city, country))
-      return parser.parse(response)
+      begin
+        make_request_and_parse_response(street_address, city, country)
+      rescue RestClient::Exception => e
+        raise GeocoderError, e
+      end
     end
     
     private
+      def make_request_and_parse_response(street_address, city, country)
+        response = http_client.get(BASE_URL, params(street_address, city, country))
+        parser.parse(response)
+      end
+
       def params(street_address, city, country)
         {:address => "#{street_address},#{city}", :region => country, :sensor => false}
       end

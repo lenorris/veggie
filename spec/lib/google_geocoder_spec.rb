@@ -27,6 +27,12 @@ describe Geocoder::GoogleGeocoder do
       @http_client.should_receive(:get).with(@base_url, parameters).and_return(mock_google_api_response(1, @responses[:ok], @expected_lat, @expected_lng))
       @geocode.call
     end
+
+    it "throws a GeocoderException if http_client throws an exception" do
+      exception = RestClient::Exception.new
+      @http_client.stub(:get).and_raise(exception)
+      expect(@geocode).to raise_error(Geocoder::GeocoderError)
+    end
   end
 
   context "parser" do
