@@ -10,9 +10,9 @@ describe Geocoder do
     @expected_lat = 60.16794829999999
     @expected_lng = 24.93563410
     @expected_coordinates = [@expected_lng, @expected_lng]
-    Rails.env.stub(:test?).and_return(false)
     @google_adapter = double('google adapter')
     @yahoo_adapter = double('yahoo adapter')
+    Geocoder.rspec_reset # geocoder is mocked in spec_helper to prevent networking in tests
     Geocoder.stub(:adapters).and_return([@google_adapter, @yahoo_adapter])
     @geocode = lambda { Geocoder.get_latlng(@street_address, @city, @country) }
   end
@@ -54,14 +54,6 @@ describe Geocoder do
       @yahoo_adapter.stub(:geocode).and_raise(Geocoder::GeocoderError)
       expect(@geocode).to raise_error(Geocoder::GeocoderError)
     end
-  end
-
-  context "mock responses" do
-    it "should return Bamboo Centers coordinates when rails environment is test" do
-      Rails.env.stub!(:test?).and_return(true) # stubbed because we stub it as false for all tests earlier
-      Geocoder.get_latlng('Trolololo', 'what', 'ever').should eq [@expected_lat, @expected_lng]
-    end   
-    
   end
   
 end

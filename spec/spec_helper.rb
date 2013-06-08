@@ -51,6 +51,11 @@ RSpec.configure do |config|
   config.after(:each) do
    DatabaseCleaner.clean
   end
+
+  # we don't want any tests making actual requests to geocoding backends
+  config.before(:each) do
+    Geocoder.stub(:get_latlng).and_return([60.16794829999999, 24.93563410])
+  end
   
 end
 
